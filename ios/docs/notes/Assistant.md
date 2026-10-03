@@ -64,3 +64,11 @@ Large text: card scrolls; amounts move under the step title.
 5. Optional: a `Router.assistantNote` so the header logo itself stretches into the note (now drawn by the overlay).
 6. Wei's Mandarin and nol prompts are added by the assistant only if missing from `assistantPrompts` (the personas helper's data already has them, so this is a no-op after merge).
 7. Not built: Dynamic Island / Live Activity for a task still running after close; Siri / Action button entry.
+
+## Fixes for 6.0 (2) (3 Oct, found by the Android QA pass)
+- **Start scanning** now opens the tracker's own fake passport camera over the assistant (`AssistantFollowUp.scanPassport`,
+  presented by `AssistantOverlay` with `activityPassportCapture`). Use this photo sends it ("Sent to GDRFA") and the assistant
+  closes once the request leaves the step it started on (`ScanWatch`); closing the camera keeps the assistant open. With no
+  passport step waiting, it falls back to Coming soon ("Scanning with the camera comes with the service flows.").
+- **Remind me** at the visa fee step (no Needs you item of its own) says "…to pay the fees to renew your residence visa";
+  bills read "…to pay your electricity & water bill".

@@ -15,6 +15,9 @@ struct AssistantOverlay: View {
     @State private var engine = AssistantEngine()
     @State private var awake = false
     @FocusState private var fieldFocused: Bool
+    /// "Start scanning": the tracker's passport camera, presented over the assistant.
+    @State private var scan: ActivityCaptureTarget?
+    @State private var started = false
 
     var body: some View {
         GeometryReader { geo in
@@ -61,8 +64,17 @@ struct AssistantOverlay: View {
         .accessibilityElement(children: .contain)
         .accessibilityAddTraits(engine.phase == .note ? [] : .isModal)
         .accessibilityAction(.escape) { engine.close() }
+        .activityPassportCapture(scan: $scan, upload: .constant(nil)) { sent in
+            // The photo went to the entity, so the assistant's job is done. Closed without sending: stay open.
+            if sent { engine.close() }
+        }
         .onAppear {
+            // Once per opening: closing the camera can bring the overlay back on screen.
+            guard !started else { return }
+            started = true
             engine.attach(store: store, router: router)
+            let target = $scan
+            engine.onScanPassport = { id in target.wrappedValue = ActivityCaptureTarget(id: id) }
             withAnimation(DNMotion.resolve(DNMotion.bouncy)) { awake = true }
             AccessibilityNotification.Announcement("DubaiNow assistant").post()
             engine.start(seed: router.assistantSeed)

@@ -28,3 +28,7 @@
 
 ## Not verified by gesture
 Swipe actions and the delete dialog (the simulator-control tool wasn't authorised); they're native `.swipeActions` / `.confirmationDialog`, mirrored in the context menu.
+
+## Fixes for 6.0 (2) (3 Oct)
+- Payment sheet payee line: a Salik top-up reads "You're paying Salik" and a parking extension "You're paying Parkin"
+  (their line detail is the new balance / end time, which used to be read as the payee). `PaymentRequest.activityPayees`.

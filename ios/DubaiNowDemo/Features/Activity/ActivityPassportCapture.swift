@@ -5,14 +5,20 @@ import SwiftUI
 extension View {
     /// Attaches the fake passport scan (full screen, camera-like) and the "Upload file" picker.
     /// Both finish the same way: the request moves on and a success toast says where it went.
-    func activityPassportCapture(scan: Binding<ActivityCaptureTarget?>, upload: Binding<ActivityCaptureTarget?>) -> some View {
-        modifier(ActivityCaptureModifier(scan: scan, upload: upload))
+    /// `onFinish(sent)` reports the outcome once the camera has closed (sent, or closed without sending).
+    func activityPassportCapture(
+        scan: Binding<ActivityCaptureTarget?>,
+        upload: Binding<ActivityCaptureTarget?>,
+        onFinish: ((Bool) -> Void)? = nil
+    ) -> some View {
+        modifier(ActivityCaptureModifier(scan: scan, upload: upload, onFinish: onFinish))
     }
 }
 
 private struct ActivityCaptureModifier: ViewModifier {
     @Binding var scan: ActivityCaptureTarget?
     @Binding var upload: ActivityCaptureTarget?
+    var onFinish: ((Bool) -> Void)?
     @State private var sentRequestID: String?
     @Environment(DemoStore.self) private var store
     @Environment(ToastCenter.self) private var toasts
@@ -39,7 +45,7 @@ private struct ActivityCaptureModifier: ViewModifier {
     }
 
     private func finishScan() {
-        guard let id = sentRequestID else { return }
+        guard let id = sentRequestID else { onFinish?(false); return }
         sentRequestID = nil
         send(id, after: .milliseconds(150))
     }
@@ -51,6 +57,7 @@ private struct ActivityCaptureModifier: ViewModifier {
             store.advanceRequest(id)
             DNHaptics.success()
             toasts.show("Sent to \(entity)")
+            onFinish?(true)
         }
     }
 }

@@ -129,7 +129,7 @@ struct PaymentSheet: View {
     }
 
     private var payeeLine: String {
-        let payees = ActivityFormat.list(request.lines.map(\.detail))
+        let payees = request.activityPayees
         if request.lines.count == 1 { return "You're paying \(payees)" }
         return "\(request.lines.count) payments to \(payees)"
     }
@@ -346,5 +346,17 @@ struct PaymentTotalRow: View {
         .padding(.vertical, 6)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("Total, \(Money.spoken(total))")
+    }
+}
+
+private extension PaymentRequest {
+    /// Who the money goes to. A top-up or a parking extension shows the new balance or end time
+    /// as its line detail, so those name the payee instead.
+    var activityPayees: String {
+        switch purpose {
+        case .salikTopUp: "Salik"
+        case .extendParking: "Parkin"
+        default: ActivityFormat.list(lines.map(\.detail))
+        }
     }
 }

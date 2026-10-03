@@ -35,6 +35,8 @@ final class AssistantEngine {
     @ObservationIgnored private var job: Task<Void, Never>?
     @ObservationIgnored private var onConfirm: ((PaymentMethod) async -> Void)?
     @ObservationIgnored private var takeOverTarget: AssistantFollowUp?
+    /// Set by the overlay: presents the passport camera for a request ("Start scanning").
+    @ObservationIgnored var onScanPassport: ((String) -> Void)?
     @ObservationIgnored private var listeningSentence = ""
 
     func attach(store: DemoStore, router: Router) {
@@ -190,7 +192,13 @@ final class AssistantEngine {
 
     func perform(_ followUp: AssistantFollowUp) {
         cancelJob()
-        hand(over: followUp)
+        guard case .scanPassport(let id) = followUp else { hand(over: followUp); return }
+        // An older card can outlive the passport step: only open the camera while the request still waits on it.
+        if let r = store?.request(id), waitsOnPassport(r) {
+            onScanPassport?(id)
+        } else {
+            hand(over: .present(.comingSoon(Self.scanComingSoon(owner: store?.request(id)?.entity ?? "GDRFA"))))
+        }
     }
 
     private func hand(over target: AssistantFollowUp?) {
@@ -206,6 +214,8 @@ final class AssistantEngine {
                 router.present(sheet)
             case .openService(let id):
                 router.open(serviceID: id)
+            case .scanPassport:
+                break // presented over the assistant by perform(_:)
             }
         }
     }
@@ -806,26 +816,58 @@ final class AssistantEngine {
 
     private func runRemind(_ quote: String) {
         guard let store else { return }
-        let what = store.state.needsYou.first.map { AssistantFormat.lowerFirst($0.title) } ?? "come back to this"
-        let task = trackerRequest(store).flatMap { r in store.state.needsYou.first { if case .requestStep(let id) = $0.kind { return id == r.id }; return false } }
+        let r = trackerRequest(store)
+        let task = r.flatMap { r in store.state.needsYou.first { if case .requestStep(let id) = $0.kind { return id == r.id }; return false } }
+        // At the fee step the tracker waits on its current step, with no Needs you item of its own.
+        let step = r.flatMap { r -> RequestStep? in
+            guard case .yourTurn = r.status, let i = r.currentStepIndex else { return nil }
+            return r.steps[i]
+        }
+        let first = store.state.needsYou.first
+        let what: String
+        if let task {
+            what = AssistantFormat.lowerFirst(task.title)
+        } else if let r, let step {
+            what = "\(AssistantFormat.lowerFirst(step.title)) to \(AssistantFormat.lowerFirst(r.title))"
+        } else if let first {
+            // Bills and fines are named as things ("Electricity & water bill"), the rest as things to do.
+            what = first.payable != nil ? "pay your \(AssistantFormat.lowerFirst(first.title))" : AssistantFormat.lowerFirst(first.title)
+        } else {
+            what = "come back to this"
+        }
         show(AssistantCard(
             quote: AssistantText(quote),
-            headline: AssistantText("Done. I'll remind you at 20:00 tonight to \(task.map { AssistantFormat.lowerFirst($0.title) } ?? what).")
+            headline: AssistantText("Done. I'll remind you at 20:00 tonight to \(what).")
         ), face: .done)
         completed.insert(AssistantIntent.remind.key)
     }
 
     private func runScan(_ quote: String) {
-        let owner = store.flatMap { trackerRequest($0)?.entity } ?? "GDRFA"
+        // The request waiting on a passport photo: the tracker on screen, or the first one waiting.
+        let r = store.flatMap { store in
+            trackerRequest(store).flatMap { waitsOnPassport($0) ? $0 : nil } ?? store.state.requests.first(where: waitsOnPassport)
+        }
+        let owner = r?.entity ?? "GDRFA"
+        // Start scanning opens the tracker's own fake camera (demo step 7) over the assistant.
+        let start: AssistantFollowUp = r.map { .scanPassport(requestID: $0.id) } ?? .present(.comingSoon(Self.scanComingSoon(owner: owner)))
         show(AssistantCard(
             quote: AssistantText(quote),
             headline: AssistantText("Hold your passport flat in good light, photo page up. I'll check it's sharp before it goes to \(owner)."),
-            controls: .action(AssistantText("Start scanning"), .present(.comingSoon(ComingSoon(
-                title: "Scan your passport",
-                detail: "Scanning with the camera comes with the service flows. For now, use Upload now on the tracker.",
-                owner: owner, symbol: "camera.fill", hue: .lilac, kind: .notInDemo
-            ))))
+            controls: .action(AssistantText("Start scanning"), start)
         ), face: .awake)
+    }
+
+    private static func scanComingSoon(owner: String) -> ComingSoon {
+        ComingSoon(
+            title: "Scan your passport",
+            detail: "Scanning with the camera comes with the service flows.",
+            owner: owner, symbol: "camera.fill", hue: .lilac, kind: .notInDemo
+        )
+    }
+
+    private func waitsOnPassport(_ r: RequestItem) -> Bool {
+        guard case .yourTurn = r.status, let i = r.currentStepIndex else { return false }
+        return r.steps[i].title.lowercased().contains("passport")
     }
 
     private func trackerRequest(_ store: DemoStore) -> RequestItem? {

@@ -158,6 +158,8 @@ enum AssistantFollowUp: Equatable {
     case push(Route)
     case present(SheetRoute)
     case openService(String)
+    /// The tracker's fake passport camera, over the assistant; it closes once the request moves on.
+    case scanPassport(requestID: String)
 }
 
 /// Inline Happiness faces after a task.
