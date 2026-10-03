@@ -1,0 +1,142 @@
+{
+  "duration": 63,
+  "music": {
+    "src": "assets/bgm/residents-bed.mp3",
+    "volume": 0.72,
+    "source": "HeyGen catalogue fcde7f689b554197bbdae6c40a5e57da ('Minimalist, premium, corporate tech… clean piano and soft electronic beats'), 125 BPM. Bars 28–31 removed (54.19→61.87 s) so the outro lands on the end card."
+  },
+  "beat": {
+    "bpm": 125.027,
+    "phase": 0.44
+  },
+  "title": {
+    "kicker": "DubaiNow Next",
+    "head": "Four residents, one DubaiNow.",
+    "sub": "How the new core app and service library work for the people who use them."
+  },
+  "personas": [
+    {
+      "id": "khalid",
+      "t0": 4.28,
+      "name": "Khalid",
+      "initial": "K",
+      "hue": "sand",
+      "role": "Father, building the family home",
+      "head": "Seven entities. One journey.",
+      "sub": "Build a house takes him from plot to move-in, start to finish. Home tells him when it’s his turn.",
+      "badge": "journey",
+      "badgeText": "Start to finish",
+      "service": "Build a house",
+      "meta": "7 stages · 7 entities · 1 to 2 years"
+    },
+    {
+      "id": "faisal",
+      "t0": 15.8,
+      "name": "Faisal",
+      "initial": "F",
+      "hue": "sky",
+      "role": "Café owner in Al Quoz, with two vans",
+      "head": "Every bill and fine. One tap.",
+      "sub": "Pay all clears the café’s DEWA and du bills and a fine on one of the vans, then asks how it went.",
+      "badge": "bundle",
+      "badgeText": "All at once",
+      "service": "Pay all your bills and fines",
+      "meta": "13 kinds of bill, fine and top-up"
+    },
+    {
+      "id": "sara",
+      "t0": 27.31,
+      "name": "Sara",
+      "initial": "S",
+      "hue": "rose",
+      "role": "Mother, sponsoring her family",
+      "head": "Her family’s visas, renewed together.",
+      "sub": "Home spots two visas due in 73 days and offers to renew them in one go, medical tests and Emirates IDs included.",
+      "badge": "bundle",
+      "badgeText": "All at once",
+      "service": "Renew your family’s visas",
+      "meta": "GDRFA, DHA, ICP and insurers"
+    },
+    {
+      "id": "mahmoud",
+      "t0": 36.91,
+      "name": "Mahmoud",
+      "initial": "M",
+      "hue": "mint",
+      "role": "Site technician, uses DubaiNow in Arabic",
+      "head": "Every screen, in his language.",
+      "sub": "Switch to Arabic and the whole app mirrors, right to left. Every service keeps its Arabic name, and search understands Arabic too.",
+      "badge": "lang",
+      "badgeText": "English",
+      "badgeTextAr": "العربية",
+      "service": "",
+      "meta": "Arabic and English, in every component"
+    }
+  ],
+  "library": {
+    "t0": 48.43,
+    "head": "One library, three kinds of service.",
+    "sub": "Every service is named for what it does, and sorted by how much it does for you."
+  },
+  "end": {
+    "t0": 54.19,
+    "head": "The new DubaiNow.",
+    "sub": "Built around what residents need to do.",
+    "meta": "Core app and service library · Design preview · October 2026"
+  },
+  "taps": {
+    "payAll": 18.9,
+    "happy": 23.0,
+    "addSuggestion": 32.7,
+    "renew": 34.4,
+    "arSearch": 42.9
+  },
+  "sfx": [
+    {
+      "file": "whoosh-short",
+      "t": 3.75,
+      "vol": 0.22
+    },
+    {
+      "file": "whoosh-short",
+      "t": 15.55,
+      "vol": 0.16
+    },
+    {
+      "file": "chime",
+      "t": 19.75,
+      "vol": 0.22
+    },
+    {
+      "file": "whoosh-short",
+      "t": 27.05,
+      "vol": 0.16
+    },
+    {
+      "file": "pop",
+      "t": 31.15,
+      "vol": 0.2
+    },
+    {
+      "file": "whoosh-short",
+      "t": 36.29,
+      "vol": 0.16
+    },
+    {
+      "file": "whoosh-short",
+      "t": 38.8,
+      "vol": 0.2
+    },
+    {
+      "file": "typing",
+      "t": 43.52,
+      "vol": 0.22
+    },
+    {
+      "file": "sparkle",
+      "t": 54.6,
+      "vol": 0.18
+    }
+  ],
+  "wipe": 38.83
+}

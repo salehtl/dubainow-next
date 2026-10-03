@@ -1,0 +1,90 @@
+4111|keep|service|standalone|work|health-pros|DHA|healthcare-pros|update-professional-licence-card|Update your healthcare professional licence card|Update licence card|Reissue your healthcare licence card after your details or photo change.|تحديث بطاقة الترخيص المهني الصحي|||professional licence card, PLC|Beta today.
+4016|keep|service|standalone|justice|emergencies|Dubai Police|all|get-police-emergency-help|Get emergency help from the police|Police SOS|Send an emergency alert with your location to Dubai Police.|طلب النجدة من الشرطة|||SOS, emergency, 999|Beta today.
+4109|keep|service|standalone|work|health-pros|DHA|healthcare-pros|pay-healthcare-licence-fine|Pay a fine on a healthcare licence|Pay licence fine|Pay fines issued against a healthcare facility or professional licence.|دفع مخالفات الترخيص الصحي|||healthcare fines|Beta today.
+70363|keep|service|standalone|transport|fines|RTA|businesses|pay-abra-fine|Pay a fine for a traditional abra|Pay abra fine|For abra owners and drivers: pay fines for breaking abra operating rules.|دفع مخالفات العبرات التقليدية|pay-all||abra|Beta today.
+4121|fold|option||faith|giving|Cancer fund (to confirm)|all|charity-cancer-fund|The Cancer Fund||Support people being treated for cancer.|صندوق دعم مرضى السرطان|donate-to-charity||cancer|Owner not named in the catalogue.
+4105|keep|service|standalone|work|health-pros|DHA|healthcare-pros|report-licence-cancellation-problem|Report a facility that won't cancel your licence|Licence cancellation|For healthcare professionals whose facility refuses to cancel their licence.|الإبلاغ عن رفض إلغاء الترخيص المهني|||licence cancellation|Beta today.
+2310|keep|thing||health|records|DHA|all|your-health|Your health records and appointments|Your health|See your medical records and appointments, and your family's.|سجلاتك الصحية ومواعيدك|||MyHealth, medical records, appointments|Beta today. Absorbs patient_services (2230).
+4104|keep|service|standalone|visas|your-visa|GDRFA|all|apply-golden-visa|Apply for a Golden Visa|Golden Visa|Apply for a long-term residence visa if you qualify.|طلب الإقامة الذهبية|||golden visa, long-term residency|Beta today; virtual (hands off to GDRFA).
+4113|keep|service|standalone|faith|guidance|IACAD|all|declare-conversion-to-islam|Declare your conversion to Islam|Embrace Islam|Get guidance, make the declaration and get a certificate of conversion.|إشهار الإسلام|||shahada, convert to Islam|Beta today.
+1111111|merge|||||||||||||your-properties|My Property|Virtual duplicate of My properties (4054).
+40220|review|service|standalone|housing|support|MBRHE (to confirm)|dubai-citizens|rent-a-house-review|Rent a house (to confirm)|Rent a house|To confirm: possibly renting a home from a housing support project.||||rent a house|Beta, virtual, no Arabic and no description. Check scope with the owner.
+4116|keep|service|standalone|justice|report|Dubai Police|all|report-abuse-women-children|Report violence or abuse against a woman or child|Report abuse|Report violence, abuse or neglect against a woman or child, in confidence.|الإبلاغ عن العنف ضد المرأة والطفل|||child protection, domestic violence|Beta today. Analytics also logs women_child_protection.
+4110|keep|service|standalone|visas|ids|ICP|nationals|get-or-renew-emirates-id|Get or renew an Emirates ID|Emirates ID|For UAE nationals. Residents renew theirs with their residence visa.|إصدار أو تجديد الهوية الإماراتية|||Emirates ID, EID, identity card|Beta today. Analytics also logs RENEW_EID.
+1115|retire|||||||||||||||Old Rashid assistant. Replaced by search.
+1122|retire|||||||||||||||Draft taxi booking. RTA's own app does this.
+2001|retire|||||||||||||||Seasonal campaign (Fitness Challenge).
+1121|retire|||||||||||||||Draft business directory, never published.
+1125|merge|||||||||||||register-as-volunteer|Volunteer Registration|Draft duplicate of Volunteer (4044).
+2202|restore|service|journey|housing||DubaiNow|all|move-home|Move home|Move home|Your tenancy, electricity and water, cooling, gas, internet and permits when you move.|الانتقال إلى منزل جديد|||moving home, move in, move out|Draft today. Proposed journey; absorbs Rent and Ejari (2214) and Home Packages (2206).
+1139|retire|||||||||||||||Campaign (Martyrs Mosque). Can return as a Give to charity campaign.
+2253|retire|||||||||||||||Old copy of Renew your vehicle registration (2338).
+1107|retire|||||||||||||||Draft open-data view of property transactions.
+2203|retire|||||||||||||||Private home services provider.
+41|restore|service|standalone|housing|renting|DLD|all|check-rent-increase|Check how much your rent can go up|Rent increase|Use the rental index to see the most a landlord can raise your rent.|حاسبة زيادة الإيجار|move-home||RERA calculator, rental index|Draft with 20 users. Worth publishing.
+2216|merge|||||||||||||sponsor-family-member|Get Residency|Draft duplicate of Get Family Residency (2246).
+2221|restore|service|standalone|housing|owning|DLD|all|find-real-estate-broker|Find a licensed real estate broker|Find a broker|Check that a broker or brokerage is licensed before you deal with them.|البحث عن وسيط عقاري مرخّص|||broker, real estate agent, RERA|Draft. Worth publishing.
+1137|retire|||||||||||||||Old campaign (Kerala relief).
+1138|retire|||||||||||||||Old campaign (Smart City Challenge).
+1117|retire|||||||||||||||Draft pay-at-pump. Fuel top-up stays (2002).
+2201|review|service|journey|transport|licences|DubaiNow|all|learn-to-drive|Learn to drive|Learn to drive|From driving lessons and tests to your first licence and car.|تعلّم القيادة|||driving school, first licence|Draft journey idea ("Drive a vehicle"). Candidate for later.
+2029|merge|||||||||||||report-city-problem|Report Urban Issues (Madinati)|Draft duplicate of Madinati (1111130).
+2265|retire|||||||||||||||Trivia game.
+2290|merge|||||||||||||get-sanad-card|Sanad Card|Draft duplicate of Get Sanad Card (4102). Analytics key 2290.
+2031|review|service|standalone|transport|parking|Parkin (to confirm)|pod|parking-benefit-review|Parking benefit (to confirm)|Parking benefit|To confirm: free or discounted parking for eligible people.||||free parking|Draft with no description. Check if this is the parking benefit for people of determination.
+2030|retire|||||||||||||||Draft umbrella for CDA benefits. Replaced by each benefit.
+2022|retire|||||||||||||||Draft umbrella (Citizen Welfare).
+1110|merge|||||||||||||register-tenancy-contract|View Ejari|Draft. Contracts show inside Ejari and Your properties.
+2233|merge|||||||||||||your-legal-cases|DPP Case Payment|Draft. Pay inside Your public prosecution cases.
+2249|retire|||||||||||||||Ended campaign (1 Billion Meals Endowment).
+2326|merge|||||||||||||get-financial-support-letter|Social Benefits NOC|Draft duplicate of 4076.
+2322|merge|||||||||||||apply-pod-financial-support|Financial Benefits for POD|Draft duplicate of 4101.
+5104|retire|||||||||||||||Dubai Live, virtual draft.
+2219|restore|service|standalone|justice|report|Dubai Police|all|report-lost-or-found-item|Report something you've lost or found|Lost and found|Report a lost or found item to Dubai Police and follow it up.|الإبلاغ عن المفقودات والموجودات|||lost and found, lost item|Draft with users. Worth publishing.
+5000|move|app||||||||||||||App feature: DubaiAI becomes the assistant in search.
+11470|retire|||||||||||||||Seasonal campaign (Ramadan Tent).
+2314|retire|||||||||||||||Empty draft (Smart pharmacy).
+1111107|move|app||||||||||||||App feature: Around Me (map).
+2269|retire|||||||||||||||Old recycling campaign (Go Green).
+2340|retire|||||||||||||||Draft duplicate of Register a vehicle (4008).
+2259|retire|||||||||||||||Seasonal campaign (Eid sacrifice). Can return as a Give to charity campaign.
+2318|merge|||||||||||||get-help-with-wedding|Dubai Weddings|Draft duplicate of 4093.
+2207|retire|||||||||||||||Broken draft (DEWA name, driving content).
+5001|retire|||||||||||||||Empty entry "04".
+1140|retire|||||||||||||||Draft car insurance marketplace.
+4025|retire|||||||||||||||Seasonal campaign (Eid clothing).
+13|restore|service|standalone|health|care|DHA|all|find-doctor-or-clinic|Find a doctor or clinic|Find a doctor|Find doctors and clinics near you, by speciality.|البحث عن طبيب أو عيادة|||doctors, clinics|Draft. Worth publishing.
+1142|retire|||||||||||||||Seasonal campaign (Iftar).
+19|retire|||||||||||||||Old draft of Pay for parking (2019).
+100|retire|||||||||||||||Draft trade activity search (DET's own app).
+1112|retire|||||||||||||||Draft initial approval (DET's own app).
+800|retire|||||||||||||||Test entry (Loan CalculatorTest).
+1108|merge|||||||||||||your-electricity-water-account|DEWA Consumption|Draft. Consumption shows inside the account.
+33|merge|||||||||||||find-events|Dubai Calendar|Draft events calendar.
+28|retire|||||||||||||||Draft ATM locator.
+48|move|app||||||||||||||App feature: weather is a Home widget.
+300|retire|||||||||||||||Old feedback form. Feedback goes through the Happiness Meter and Help.
+200|merge|||||||||||||send-parcel|Empost Rates and Tracking|Draft. Rates and tracking belong in Send a parcel.
+1109|restore|service|standalone|city|streets|Dubai Municipality|all|find-makani-number|Find a building's Makani number|Makani number|Find the Makani number of any building and share its exact location.|البحث عن رقم مكاني|||Makani, address|Draft. Worth publishing.
+1111|retire|||||||||||||||Old DubaiID QR login. Replaced by UAE PASS.
+1113|merge|||||||||||||get-good-conduct-certificate|Certificate of Good Conduct|Draft duplicate of 2229.
+1130|retire|||||||||||||||Old Rashid assistant.
+11|restore|service|standalone|health|care|DHA|all|find-pharmacy|Find a pharmacy open now|Find a pharmacy|Find pharmacies near you, including those open late or on duty.|البحث عن صيدلية|||pharmacy on duty|Draft. Worth publishing.
+2000001|retire|||||||||||||||Old copy of My Vehicles (27).
+22|retire|||||||||||||||Draft speed limit map.
+603|retire|||||||||||||||Old draft (Manage Visa and Residency).
+1003|retire|||||||||||||||Draft reserve trade name (DET's own app).
+2215|merge|||||||||||||your-properties|My Properties|Draft duplicate of 4054.
+2218|retire|||||||||||||||Draft airport lounge booking.
+2224|merge|||||||||||||get-school-record|My Academic History|Draft duplicate of 2220.
+2214|merge|||||||||||||move-home|Rent and Ejari|Draft. Becomes part of the Move home journey.
+2225|retire|||||||||||||||Draft umbrella (Social Services).
+2226|retire|||||||||||||||Draft private listings (Simsari).
+2231|merge|||||||||||||get-housing-support-letter|Housing Certificate|Draft duplicate of 2024. Shares the code to_whom_it_may_concern.
+2247|retire|||||||||||||||Draft umbrella (MBRHE Services). The topic page replaces it.
+2250|retire|||||||||||||||Old COVID-19 advice page.
+2251|retire|||||||||||||||Ended COVID-19 donations campaign.
+2239|retire|||||||||||||||Draft visiting doctors alerts.
+2209|merge|||||||||||||transfer-vehicle-ownership|Transfer Ownership|Draft duplicate of 2297.
+1106|retire|||||||||||||||Draft property maintenance requests.
+2242|merge|||||||||||||find-events|Sports Calendar|Draft events calendar.

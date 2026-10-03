@@ -1,0 +1,5 @@
+{
+  "Death": {"id": "2288", "note": "No catalogue record has this code. Probably an older death life event, so it's mapped to Take care of things after a death. To confirm."},
+  "donations": {"id": "", "note": "No catalogue record has this code. Probably an old donation entry; it would sit under Donate to a registered charity."},
+  "RENEW_EID": {"id": "4110", "note": "Old event name for Get or renew an Emirates ID."}
+}

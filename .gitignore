@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+
+# Secrets — never commit (signing key, its password, Firebase/Google config)
+*.jks
+*.keystore
+keystore.properties
+google-services.json
+GoogleService-Info.plist
+*.p12
+*.mobileprovision
+.env
+.env.*
+
+# Android build output
+android/.gradle/
+android/.kotlin/
+android/build/
+android/app/build/
+android/local.properties
+
+# iOS build output (tools/build.sh and testflight.sh build into ios/.build)
+ios/.build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xcarchive
+*.ipa
+*.dSYM/
+
+# Videos: renders are rebuilt with tools/build.mjs; caches regenerate
+videos/core-vision-demo/renders/
+videos/core-vision-demo/.thumbnails/
+videos/core-vision-demo/.waveform-cache/
+node_modules/
+
+# Local tool state
+.claude/settings.local.json
+*.log

@@ -1,0 +1,361 @@
+{
+  "pay-all": {
+    "countLine": "{n} bills and fines, one payment",
+    "doesTheWork": "Finds everything due across the resident's accounts and pays it in one checkout. Anything can be unticked.",
+    "views": [
+      "Everything due",
+      "Bills",
+      "Fines",
+      "Top-ups"
+    ],
+    "settings": [
+      "Pay automatically (was Auto Payment)"
+    ]
+  },
+  "renew-family-visas": {
+    "countLine": "{n} visas due, one application",
+    "doesTheWork": "Lists every visa the resident sponsors that's due, then books the medical tests, renews the Emirates IDs and checks insurance as part of one application.",
+    "gaps": [
+      {
+        "name": "Book a medical fitness test",
+        "owner": "DHA"
+      },
+      {
+        "name": "Renew a resident's Emirates ID",
+        "owner": "ICP"
+      },
+      {
+        "name": "Renew health insurance",
+        "owner": "Insurers"
+      }
+    ]
+  },
+  "get-certificates": {
+    "countLine": "{n} certificates, one request",
+    "doesTheWork": "The resident ticks the certificates they need (for a job, a loan or a visa). DubaiNow asks each entity and collects the results in Documents."
+  },
+  "apply-all-pod-benefits": {
+    "countLine": "{n} benefits, one application",
+    "doesTheWork": "One application checks eligibility for every benefit and applies for each one the person qualifies for.",
+    "gaps": [
+      {
+        "name": "Get a parking permit for people of determination",
+        "owner": "RTA",
+        "note": "Draft 2031 may be this; to confirm."
+      }
+    ]
+  },
+  "build-a-house": {
+    "lasts": "1 to 2 years",
+    "stages": [
+      {
+        "name": "Plan",
+        "takes": "Week 1",
+        "parts": [
+          "estimate-housing-loan"
+        ]
+      },
+      {
+        "name": "Land",
+        "takes": "1 to 6 months",
+        "parts": [
+          "apply-land-grant",
+          "swap-housing-grant",
+          "get-site-plan",
+          "survey-plot-boundaries"
+        ],
+        "gaps": [
+          {
+            "name": "Register the plot in your name",
+            "owner": "DLD"
+          }
+        ]
+      },
+      {
+        "name": "Money",
+        "takes": "1 to 3 months",
+        "parts": [
+          "apply-building-loan",
+          "apply-building-grant",
+          "check-housing-application"
+        ]
+      },
+      {
+        "name": "Design",
+        "takes": "2 to 4 months",
+        "parts": [
+          "choose-villa-design",
+          "find-contractor",
+          "get-approved-drawings"
+        ]
+      },
+      {
+        "name": "Permits",
+        "takes": "1 to 2 months",
+        "parts": [],
+        "gaps": [
+          {
+            "name": "Get a building permit",
+            "owner": "Dubai Municipality"
+          },
+          {
+            "name": "Get fire safety approval",
+            "owner": "Dubai Civil Defence"
+          }
+        ]
+      },
+      {
+        "name": "Build",
+        "takes": "9 to 18 months",
+        "parts": [
+          "get-temporary-road",
+          "get-sand-supply-approval",
+          "apply-connection-fee-exemption",
+          "connect-electricity-water"
+        ],
+        "gaps": [
+          {
+            "name": "Connect to the sewer network",
+            "owner": "Dubai Municipality"
+          },
+          {
+            "name": "Get a phone and internet line",
+            "owner": "du or e&"
+          }
+        ]
+      },
+      {
+        "name": "Move in",
+        "takes": "About a month",
+        "parts": [
+          "get-building-number",
+          "request-waste-container"
+        ],
+        "gaps": [
+          {
+            "name": "Get a building completion certificate",
+            "owner": "Dubai Municipality"
+          }
+        ]
+      }
+    ]
+  },
+  "move-home": {
+    "lasts": "2 to 6 weeks",
+    "stages": [
+      {
+        "name": "Find a place",
+        "parts": [
+          "check-rent-increase",
+          "find-real-estate-broker"
+        ]
+      },
+      {
+        "name": "Sign the tenancy",
+        "parts": [
+          "register-tenancy-contract"
+        ]
+      },
+      {
+        "name": "Set up your home",
+        "parts": [
+          "connect-electricity-water",
+          "move-electricity-water-account"
+        ],
+        "gaps": [
+          {
+            "name": "Connect district cooling",
+            "owner": "Empower"
+          },
+          {
+            "name": "Connect gas",
+            "owner": "Gas providers"
+          },
+          {
+            "name": "Get home internet and TV",
+            "owner": "du or e&",
+            "note": "Was the draft Home Packages (2206)."
+          }
+        ]
+      },
+      {
+        "name": "Settle in",
+        "parts": [
+          "correct-housing-fee",
+          "get-parking-permit"
+        ]
+      },
+      {
+        "name": "Leave your old home",
+        "parts": [
+          "end-tenancy-contract",
+          "close-electricity-water-account",
+          "get-utility-refund"
+        ]
+      }
+    ]
+  },
+  "get-married": {
+    "lasts": "3 to 12 months",
+    "stages": [
+      {
+        "name": "Health check",
+        "parts": [
+          "book-premarital-health-check"
+        ]
+      },
+      {
+        "name": "Marriage contract",
+        "parts": [],
+        "gaps": [
+          {
+            "name": "Register a marriage contract",
+            "owner": "Dubai Courts"
+          }
+        ]
+      },
+      {
+        "name": "The wedding",
+        "parts": [
+          "get-help-with-wedding",
+          "book-majlis"
+        ]
+      },
+      {
+        "name": "Paperwork",
+        "parts": [
+          "get-marital-status-certificate",
+          "sponsor-family-member"
+        ],
+        "gaps": [
+          {
+            "name": "Add your spouse to your family book",
+            "owner": "ICP"
+          }
+        ]
+      },
+      {
+        "name": "A home together",
+        "parts": [
+          "apply-ready-home",
+          "apply-land-grant"
+        ],
+        "gaps": [
+          {
+            "name": "Apply for the marriage grant",
+            "owner": "Ministry of Family (to confirm)"
+          }
+        ]
+      }
+    ]
+  },
+  "after-a-death": {
+    "lasts": "Weeks to months",
+    "stages": [
+      {
+        "name": "Register the death",
+        "parts": [],
+        "gaps": [
+          {
+            "name": "Get a death certificate",
+            "owner": "DHA"
+          }
+        ]
+      },
+      {
+        "name": "The burial",
+        "parts": [
+          "arrange-burial"
+        ]
+      },
+      {
+        "name": "Tell government",
+        "parts": [],
+        "gaps": [
+          {
+            "name": "Tell government in one go",
+            "owner": "DubaiNow",
+            "note": "A bundle candidate; C1 listed it."
+          }
+        ]
+      },
+      {
+        "name": "Inheritance",
+        "parts": [
+          "certify-endowment"
+        ],
+        "gaps": [
+          {
+            "name": "Apply to divide an inheritance",
+            "owner": "Dubai Courts"
+          }
+        ]
+      },
+      {
+        "name": "Close accounts and visas",
+        "parts": [
+          "close-electricity-water-account",
+          "cancel-vehicle-registration",
+          "transfer-vehicle-ownership"
+        ],
+        "gaps": [
+          {
+            "name": "Cancel a residence visa",
+            "owner": "GDRFA"
+          }
+        ]
+      }
+    ]
+  },
+  "learn-to-drive": {
+    "lasts": "1 to 3 months",
+    "stages": [
+      {
+        "name": "Open a driving file",
+        "parts": [],
+        "gaps": [
+          {
+            "name": "Open a driving file at a driving school",
+            "owner": "RTA"
+          }
+        ]
+      },
+      {
+        "name": "Eye test",
+        "parts": [],
+        "gaps": [
+          {
+            "name": "Get an eye test",
+            "owner": "Opticians"
+          }
+        ]
+      },
+      {
+        "name": "Lessons",
+        "parts": [],
+        "gaps": [
+          {
+            "name": "Book driving lessons",
+            "owner": "Driving schools"
+          }
+        ]
+      },
+      {
+        "name": "Tests",
+        "parts": [
+          "book-driving-test"
+        ]
+      },
+      {
+        "name": "Your licence",
+        "parts": [],
+        "gaps": [
+          {
+            "name": "Get your first driving licence",
+            "owner": "RTA"
+          }
+        ]
+      }
+    ]
+  }
+}

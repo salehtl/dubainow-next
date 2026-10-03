@@ -1,0 +1,322 @@
+Frame "Home · Pay all and a suggested widget (Sara)" (JM5-0) 402×1677
+  Frame "Ambient wash · Morning (changes with time of day)" (JVJ-0) 402×420
+  Frame "Status bar" (JV9-0) 402×62
+    Frame "Time" (JVH-0) 100×22
+      Text "9:41" (JVI-0) 35×22 "9:41"
+    Frame "Icons" (JVA-0) 100×22
+      SVG "SVG" (JVB-0) 82×22
+        SVGVisualElement "Path" (JVG-0) 19×12
+        SVGVisualElement "Path" (JVF-0) 17×12
+        SVGVisualElement "Path" (JVE-0) 25×13
+        SVGVisualElement "Path" (JVD-0) 21×9
+        SVGVisualElement "Path" (JVC-0) 1×4
+  Frame "Dynamic Island" (JV8-0) 126×37
+  Frame "Header" (JU5-0) 402×54
+    Frame "Glass button · Happiness Meter" (JUX-0) 48×48
+      Frame "Frost" (JV7-0) 48×48
+      Frame "Bezel lens" (JV6-0) 48×48
+      Frame "Sheen" (JV5-0) 48×48
+      Frame "Rim light" (JV4-0) 48×48
+      Frame "Icon" (JUY-0) 48×48
+        SVG "Smiley" (JUZ-0) 24×24
+          SVGVisualElement "Circle" (JV3-0) 18×18
+          SVGVisualElement "Circle" (JV2-0) 3×3
+          SVGVisualElement "Circle" (JV1-0) 3×3
+          SVGVisualElement "Path" (JV0-0) 8×2
+    Frame "Header actions" (JUE-0) 106×48
+      Frame "Glass button · Notifications" (JUM-0) 48×48
+        Frame "Frost" (JUW-0) 48×48
+        Frame "Bezel lens" (JUV-0) 48×48
+        Frame "Sheen" (JUU-0) 48×48
+        Frame "Rim light" (JUT-0) 48×48
+        Frame "Icon" (JUP-0) 48×48
+          SVG "SVG" (JUQ-0) 22×22
+            SVGVisualElement "Path" (JUS-0) 14×12
+            SVGVisualElement "Path" (JUR-0) 4×2
+        Frame "Badge" (JUN-0) 20×20
+          Text "2" (JUO-0) 8×16 "2"
+      Frame "Glass button · Profile" (JUF-0) 48×48
+        Frame "Frost" (JUL-0) 48×48
+        Frame "Bezel lens" (JUK-0) 48×48
+        Frame "Sheen" (JUJ-0) 48×48
+        Frame "Rim light" (JUI-0) 48×48
+        Frame "Avatar" (JUG-0) 36×36
+          Text "S" (JUH-0) 11×20 "S"
+    SVG "Group 1" (JU6-0) 44×42
+      SVGVisualElement "Vector" (JUD-0) 27×23
+      SVGVisualElement "Vector" (JUC-0) 25×32
+      SVGVisualElement "Vector" (JUB-0) 6×5
+      SVGVisualElement "Vector" (JUA-0) 21×27
+      SVGVisualElement "Vector" (JU9-0) 16×21
+      SVGVisualElement "Vector" (JU8-0) 6×6
+      SVGVisualElement "Vector" (JU7-0) 8×8
+  Frame "Anchor 1 · Needs you" (JSI-0) 402×402
+    Frame "Section header" (JTX-0) 402×50
+      Frame "Heading group" (JTZ-0) 177×50
+        Frame "Heading row" (JU1-0) 177×28
+          Text "Heading" (JU4-0) 109×28 "Needs you"
+          Frame "Count" (JU2-0) 24×24
+            Text "6" (JU3-0) 9×16 "6"
+          Frame "Fold control (44pt target)" (KGQ-0) 28×28
+            SVG "SVG" (KGR-0) 14×14
+              SVGVisualElement "Path" (KGS-0) 7×4
+        Text "Summary" (JU0-0) 177×20 "2 due this week"
+      Text "See all" (JTY-0) 54×44 "See all"
+    Frame "Pay all · action of Needs you" (JVK-0) 402×40
+      Frame "Frame" (JVL-0) 221×40
+        SVG "SVG" (JVM-0) 20×11
+          SVGVisualElement "Circle" (JVN-0) 8×8
+          SVGVisualElement "Circle" (JVO-0) 8×8
+          SVGVisualElement "Circle" (JVP-0) 8×8
+        Text "Pay all · AED 1,012.…" (JVQ-0) 163×20 "Pay all · AED 1,012.60"
+    Frame "Rail" (JSJ-0) 402×256
+      Frame "Brief card · Bill" (JTA-0) 272×252
+        Frame "Poster" (JTK-0) 272×120
+          Frame "Poster top" (JTO-0) 240×32
+            Frame "Entity" (JTS-0) 80×32
+              Frame "Glyph" (JTU-0) 32×32
+                SVG "SVG" (JTV-0) 18×18
+                  SVGVisualElement "Path" (JTW-0) 9×14
+              Text "Entity name" (JTT-0) 40×18 "DEWA"
+            Frame "Due chip" (JTP-0) 122×26
+              Frame "Dot" (JTR-0) 7×7
+              Text "Due tomorrow" (JTQ-0) 90×18 "Due tomorrow"
+          Frame "Amount" (JTL-0) 240×40
+            Text "Currency" (JTN-0) 33×22 "AED"
+            Text "Value" (JTM-0) 109×40 "412.60"
+        Frame "Body" (JTB-0) 272×132
+          Frame "Text" (JTH-0) 240×46
+            Text "Title" (JTJ-0) 240×24 "Electricity & water bill"
+            Text "Meta" (JTI-0) 240×20 "Al Barsha 1 · Account 2004 1187"
+          Frame "Actions" (JTC-0) 240×44
+            Frame "Button · Primary" (JTF-0) 144×44
+              Text "Pay now" (JTG-0) 68×24 "Pay now"
+            Frame "Button · Later" (JTD-0) 88×44
+              Text "Later" (JTE-0) 41×24 "Later"
+      Frame "Brief card · Request in progress" (JSK-0) 272×252
+        Frame "Poster" (JSU-0) 272×120
+          Frame "Poster top" (JT1-0) 240×32
+            Frame "Entity" (JT4-0) 106×32
+              Frame "Glyph" (JT6-0) 32×32
+                SVG "SVG" (JT7-0) 18×18
+                  SVGVisualElement "Path" (JT9-0) 10×14
+                  SVGVisualElement "Path" (JT8-0) 8×11
+              Text "Entity name" (JT5-0) 66×18 "Residency"
+            Frame "Due chip" (JT2-0) 86×26
+              Text "3 days left" (JT3-0) 66×18 "3 days left"
+          Frame "Steps" (JSX-0) 240×40
+            Frame "Step label" (JSY-0) 240×40
+              Text "3" (JT0-0) 21×40 "3"
+              Text "of 5 steps" (JSZ-0) 74×22 "of 5 steps"
+          Frame "Continue bar" (JSV-0) 272×5
+            Frame "Watched" (JSW-0) 109×5
+        Frame "Body" (JSL-0) 272×132
+          Frame "Text" (JSR-0) 240×46
+            Text "Title" (JST-0) 240×24 "Upload passport copy"
+            Text "Meta" (JSS-0) 240×20 "Residence renewal · GDRFA"
+          Frame "Actions" (JSM-0) 240×44
+            Frame "Button · Primary" (JSN-0) 240×44
+              SVG "SVG" (JSP-0) 16×16
+                SVGVisualElement "Path" (JSQ-0) 8×10
+              Text "Continue" (JSO-0) 73×24 "Continue"
+  Frame "Anchor 2 · Favorites" (JRO-0) 402×194
+    Frame "Section header" (JSF-0) 362×44
+      Text "Heading" (JSH-0) 95×28 "Favorites"
+      Text "Edit" (JSG-0) 31×24 "Edit"
+    Frame "Favorites row (4-column grid, 12 gutter)" (JRP-0) 362×106
+      Frame "Favorite · Pay parking" (JSA-0) 82×106
+        Frame "Tile" (JSC-0) 82×82
+          SVG "SVG" (JSD-0) 34×34
+            SVGVisualElement "Path" (JSE-0) 26×26
+        Text "Label" (JSB-0) 82×16 "Pay parking"
+      Frame "Favorite · Salik" (JS0-0) 82×106
+        Frame "Tile" (JS2-0) 82×82
+          SVG "SVG" (JS3-0) 34×34
+            SVGVisualElement "Rect" (JS9-0) 26×5
+            SVGVisualElement "Rect" (JS8-0) 4×23
+            SVGVisualElement "Rect" (JS7-0) 4×23
+            SVGVisualElement "Rect" (JS6-0) 9×6
+            SVGVisualElement "Rect" (JS5-0) 2×3
+            SVGVisualElement "Rect" (JS4-0) 2×3
+        Text "Label" (JS1-0) 82×16 "Salik"
+      Frame "Favorite · Vehicles" (JRV-0) 82×106
+        Frame "Tile" (JRX-0) 82×82
+          SVG "SVG" (JRY-0) 34×34
+            SVGVisualElement "Path" (JRZ-0) 28×23
+        Text "Label" (JRW-0) 82×16 "Vehicles"
+      Frame "Favorite · Donate" (JRQ-0) 82×106
+        Frame "Tile" (JRS-0) 82×82
+          SVG "SVG" (JRT-0) 34×34
+            SVGVisualElement "Path" (JRU-0) 26×23
+        Text "Label" (JRR-0) 82×16 "Donate"
+  Frame "Canvas · Your widgets" (JNF-0) 402×665
+    Frame "Section header" (JRL-0) 362×44
+      Text "Heading" (JRN-0) 133×28 "Your widgets"
+      Text "Edit" (JRM-0) 31×24 "Edit"
+    Frame "Suggested slot" (JVS-0) 362×203
+      Frame "Widget · Family visas · Medium" (JVT-0) 362×175
+        Frame "Frame" (JVU-0) 330×44
+          Frame "Frame" (JVV-0) 148×36
+            Frame "Frame" (JVW-0) 34×34
+              SVG "SVG" (JVX-0) 18×18
+                SVGVisualElement "Rect" (JVY-0) 11×14
+                SVGVisualElement "Circle" (JVZ-0) 5×5
+                SVGVisualElement "Path" (JW0-0) 5×?
+            Frame "Frame" (JW1-0) 104×36
+              Text "Family visas" (JW2-0) 104×20 "Family visas"
+              Text "All at once · 2 due" (JW3-0) 104×16 "All at once · 2 due"
+          Frame "Quick action · Renew" (JW4-0) 90×34
+            Text "Renew 2" (JW5-0) 62×20 "Renew 2"
+        Frame "People" (JW6-0) 330×90
+          Frame "Person · Layla" (JW7-0) 96×90
+            Frame "Frame" (JW8-0) 48×48
+              Text "L" (JW9-0) 9×20 "L"
+              SVG "SVG" (JWA-0) 48×48
+                SVGVisualElement "Circle" (JWB-0) 40×40
+                SVGVisualElement "Circle" (JWC-0) 40×40
+            Text "Layla" (JWD-0) 34×18 "Layla"
+            Text "73 days" (JWE-0) 46×16 "73 days"
+          Frame "Person · Omar" (JWF-0) 96×90
+            Frame "Frame" (JWG-0) 48×48
+              Text "O" (JWH-0) 12×20 "O"
+              SVG "SVG" (JWI-0) 48×48
+                SVGVisualElement "Circle" (JWJ-0) 40×40
+                SVGVisualElement "Circle" (JWK-0) 40×40
+            Text "Omar" (JWL-0) 35×18 "Omar"
+            Text "73 days" (JWM-0) 46×16 "73 days"
+          Frame "Person · Maria" (JWN-0) 96×90
+            Frame "Frame" (JWO-0) 48×48
+              Text "M" (JWP-0) 14×20 "M"
+              SVG "SVG" (JWQ-0) 48×48
+                SVGVisualElement "Circle" (JWR-0) 40×40
+            Text "Maria" (JWS-0) 36×18 "Maria"
+            Text "152 days" (JWT-0) 50×16 "152 days"
+      Frame "Frame" (JWU-0) 362×18
+        Text "Suggested · 2 visas …" (JWV-0) 228×18 "Suggested · 2 visas expire in 73 days"
+        Text "Not now" (JWW-0) 53×18 "Not now"
+      Frame "Add badge (44pt target)" (JWX-0) 30×30
+        SVG "SVG" (JWY-0) 14×14
+          SVGVisualElement "Path" (JWZ-0) 8×8
+    Frame "Row 1" (JQC-0) 362×175
+      Frame "Widget · Parking · Small" (JR7-0) 175×175
+        Frame "Top" (JRE-0) 147×44
+          Frame "Parking sign" (JRJ-0) 34×34
+            Text "P" (JRK-0) 15×24 "P"
+          Frame "Quick action · Extend (44pt)" (JRF-0) 44×44
+            Frame "Circle" (JRG-0) 34×34
+              SVG "SVG" (JRH-0) 16×16
+                SVGVisualElement "Path" (JRI-0) 9×9
+        Frame "Value" (JRB-0) 147×52
+          Text "42" (JRD-0) 54×46 "42"
+          Text "min" (JRC-0) 28×22 "min"
+        Text "Caption" (JRA-0) 147×30 "left in Zone 365C"
+        Frame "Draining bar" (JR8-0) 143×6
+          Frame "Remaining" (JR9-0) 50×6
+      Frame "Widget · Salik · Small" (JQD-0) 175×175
+        SVG "Lane marks (decorative)" (JR4-0) 175×175
+          SVGVisualElement "Path" (JR6-0) 32×83
+          SVGVisualElement "Path" (JR5-0) ?×35
+        Frame "Top" (JQV-0) 147×44
+          Frame "Gantry" (JR0-0) 34×34
+            SVG "SVG" (JR1-0) 20×20
+              SVGVisualElement "Path" (JR3-0) 14×12
+              SVGVisualElement "Rect" (JR2-0) 6×3
+          Frame "Quick action · Top up (44pt)" (JQW-0) 44×44
+            Frame "Circle" (JQX-0) 34×34
+              SVG "SVG" (JQY-0) 16×16
+                SVGVisualElement "Path" (JQZ-0) 9×9
+        Frame "Value" (JQS-0) 147×52
+          Text "AED" (JQU-0) 33×22 "AED"
+          Text "18" (JQT-0) 49×46 "18"
+        Frame "Caption" (JQP-0) 147×30
+          Frame "Dot" (JQR-0) 7×7
+          Text "Low · about 4 trips" (JQQ-0) 117×18 "Low · about 4 trips"
+        Frame "Trip pips" (JQE-0) 143×6
+          Rectangle "Rectangle" (JQO-0) 12×6
+          Rectangle "Rectangle" (JQN-0) 12×6
+          Rectangle "Rectangle" (JQM-0) 12×6
+          Rectangle "Rectangle" (JQL-0) 12×6
+          Rectangle "Rectangle" (JQK-0) 12×6
+          Rectangle "Rectangle" (JQJ-0) 12×6
+          Rectangle "Rectangle" (JQI-0) 12×6
+          Rectangle "Rectangle" (JQH-0) 12×6
+          Rectangle "Rectangle" (JQG-0) 12×6
+          Rectangle "Rectangle" (JQF-0) 12×6
+    Frame "Row 2" (JPF-0) 362×175
+      Frame "Widget · Prayer & sun · Small" (JPU-0) 175×175
+        Frame "Top" (JQ4-0) 143×66
+          Frame "Header" (JQ6-0) 143×20
+            Frame "Frame" (JQ8-0) 67×20
+              SVG "SVG" (JQA-0) 16×16
+                SVGVisualElement "Path" (JQB-0) 10×11
+              Text "Dhuhr" (JQ9-0) 45×20 "Dhuhr"
+            Text "in 2h 31m" (JQ7-0) 59×18 "in 2h 31m"
+          Text "Time" (JQ5-0) 143×44 "12:12"
+        SVG "Arc of the day" (JPV-0) 143×52
+          SVGVisualElement "Path" (JQ3-0) 143×?
+          SVGVisualElement "Path" (JQ2-0) 132×40
+          SVGVisualElement "Path" (JQ1-0) 26×32
+          SVGVisualElement "Circle" (JQ0-0) 7×7
+          SVGVisualElement "Circle" (JPZ-0) 5×5
+          SVGVisualElement "Circle" (JPY-0) 5×5
+          SVGVisualElement "Circle" (JPX-0) 22×22
+          SVGVisualElement "Circle" (JPW-0) 13×13
+      Frame "Widget · Weather & beach · Small" (JPG-0) 175×175
+        Frame "Top" (JPM-0) 143×88
+          Frame "Header" (JPP-0) 143×20
+            SVG "SVG" (JPR-0) 16×16
+              SVGVisualElement "Circle" (JPT-0) 6×6
+              SVGVisualElement "Path" (JPS-0) 13×13
+            Text "Kite Beach" (JPQ-0) 78×20 "Kite Beach"
+          Text "Temperature" (JPO-0) 143×46 "37°"
+          Text "Caption" (JPN-0) 143×18 "Feels 42° · UV 9"
+        Frame "Beach flag" (JPH-0) 123×28
+          SVG "SVG" (JPJ-0) 16×16
+            SVGVisualElement "Path" (JPL-0) ?×12
+            SVGVisualElement "Path" (JPK-0) 8×6
+          Text "Safe to swim" (JPI-0) 81×18 "Safe to swim"
+  Frame "Canvas end · Add widget" (JN5-0) 402×300
+    Frame "Empty slot · Add widget" (JNA-0) 362×96
+      Frame "Plus" (JNC-0) 44×44
+        SVG "SVG" (JND-0) 18×18
+          SVGVisualElement "Path" (JNE-0) 11×11
+      Text "Add widget" (JNB-0) 92×24 "Add widget"
+    Frame "Pull hint" (JN6-0) 221×42
+      SVG "SVG" (JN8-0) 22×22
+        SVGVisualElement "Path" (JN9-0) 11×6
+      Text "Pull past the end to…" (JN7-0) 221×18 "Pull past the end to browse widgets"
+  Frame "Soft scroll edge · Bottom" (JN4-0) 402×137
+  Frame "Tab bar · Liquid Glass" (JMG-0) 288×64
+    Frame "Frost" (JN3-0) 288×64
+    Frame "Bezel lens" (JN2-0) 288×64
+    Frame "Sheen" (JN1-0) 288×64
+    Frame "Rim light" (JN0-0) 288×64
+    Frame "Tabs" (JMH-0) 280×56
+      Frame "Tab · Home · Selected" (JMV-0) 93×56
+        SVG "SVG" (JMX-0) 24×24
+          SVGVisualElement "Path" (JMZ-0) 18×19
+          SVGVisualElement "Path" (JMY-0) 4×7
+        Text "Home" (JMW-0) 35×16 "Home"
+      Frame "Tab · Services" (JMO-0) 93×56
+        SVG "SVG" (JMQ-0) 24×24
+          SVGVisualElement "Rect" (JMU-0) 8×8
+          SVGVisualElement "Rect" (JMT-0) 8×8
+          SVGVisualElement "Rect" (JMS-0) 8×8
+          SVGVisualElement "Rect" (JMR-0) 8×8
+        Text "Services" (JMP-0) 50×16 "Services"
+      Frame "Tab · Activity" (JMI-0) 93×56
+        SVG "SVG" (JMK-0) 24×24
+          SVGVisualElement "Path" (JMN-0) 18×18
+          SVGVisualElement "Path" (JMM-0) 5×5
+          SVGVisualElement "Path" (JML-0) 4×7
+        Text "Activity" (JMJ-0) 44×16 "Activity"
+  Frame "Search · Liquid Glass" (JM7-0) 64×64
+    Frame "Frost" (JMF-0) 64×64
+    Frame "Bezel lens" (JME-0) 64×64
+    Frame "Sheen" (JMD-0) 64×64
+    Frame "Rim light" (JMC-0) 64×64
+    Frame "Icon" (JM8-0) 64×64
+      SVG "SVG" (JM9-0) 26×26
+        SVGVisualElement "Circle" (JMB-0) 14×14
+        SVGVisualElement "Path" (JMA-0) 6×6
+  Frame "Home indicator" (JM6-0) 134×5

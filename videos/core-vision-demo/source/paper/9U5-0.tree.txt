@@ -1,0 +1,349 @@
+Frame "Home · Default" (9U5-0) 402×1836
+  Frame "Ambient wash · Morning (changes with time of day)" (A3I-0) 402×420
+  Frame "Status bar" (A38-0) 402×62
+    Frame "Time" (A3G-0) 100×22
+      Text "9:41" (A3H-0) 35×22 "9:41"
+    Frame "Icons" (A39-0) 100×22
+      SVG "SVG" (A3A-0) 82×22
+        SVGVisualElement "Path" (A3F-0) 19×12
+        SVGVisualElement "Path" (A3E-0) 17×12
+        SVGVisualElement "Path" (A3D-0) 25×13
+        SVGVisualElement "Path" (A3C-0) 21×9
+        SVGVisualElement "Path" (A3B-0) 1×4
+  Frame "Dynamic Island" (A37-0) 126×37
+  Frame "Header" (A24-0) 402×54
+    Frame "Glass button · Happiness Meter" (A2W-0) 48×48
+      Frame "Frost" (A36-0) 48×48
+      Frame "Bezel lens" (A35-0) 48×48
+      Frame "Sheen" (A34-0) 48×48
+      Frame "Rim light" (A33-0) 48×48
+      Frame "Icon" (A2Z-0) 48×48
+        SVG "Smiley" (ALO-0) 24×24
+          SVGVisualElement "Circle" (ALP-0) 18×18
+          SVGVisualElement "Circle" (ALQ-0) 3×3
+          SVGVisualElement "Circle" (ALR-0) 3×3
+          SVGVisualElement "Path" (ALS-0) 8×2
+    Frame "Header actions" (A2D-0) 106×48
+      Frame "Glass button · Notifications" (AL2-0) 48×48
+        Frame "Frost" (ALC-0) 48×48
+        Frame "Bezel lens" (ALB-0) 48×48
+        Frame "Sheen" (ALA-0) 48×48
+        Frame "Rim light" (AL9-0) 48×48
+        Frame "Icon" (AL5-0) 48×48
+          SVG "SVG" (AL6-0) 22×22
+            SVGVisualElement "Path" (AL8-0) 14×12
+            SVGVisualElement "Path" (AL7-0) 4×2
+        Frame "Badge" (AL3-0) 20×20
+          Text "2" (AL4-0) 8×16 "2"
+      Frame "Glass button · Profile" (A2E-0) 48×48
+        Frame "Frost" (A2K-0) 48×48
+        Frame "Bezel lens" (A2J-0) 48×48
+        Frame "Sheen" (A2I-0) 48×48
+        Frame "Rim light" (A2H-0) 48×48
+        Frame "Avatar" (A2F-0) 36×36
+          Text "S" (A2G-0) 11×20 "S"
+    SVG "Group 1" (A25-0) 44×42
+      SVGVisualElement "Vector" (A2C-0) 27×23
+      SVGVisualElement "Vector" (A2B-0) 25×32
+      SVGVisualElement "Vector" (A2A-0) 6×5
+      SVGVisualElement "Vector" (A29-0) 21×27
+      SVGVisualElement "Vector" (A28-0) 16×21
+      SVGVisualElement "Vector" (A27-0) 6×6
+      SVGVisualElement "Vector" (A26-0) 8×8
+  Frame "Anchor 1 · Needs you" (A0H-0) 402×402
+    Frame "Section header" (A1W-0) 402×50
+      Frame "Heading group" (A1Y-0) 177×50
+        Frame "Heading row" (A20-0) 177×28
+          Text "Heading" (A23-0) 109×28 "Needs you"
+          Frame "Count" (A21-0) 24×24
+            Text "6" (A22-0) 9×16 "6"
+          Frame "Fold control (44pt target)" (KGM-0) 28×28
+            SVG "SVG" (KGN-0) 14×14
+              SVGVisualElement "Path" (KGO-0) 7×4
+        Text "Summary" (A1Z-0) 177×20 "2 due this week"
+      Text "See all" (A1X-0) 54×44 "See all"
+    Frame "Pay all · action of Needs you" (KGY-0) 402×40
+      Frame "Frame" (KGZ-0) 221×40
+        SVG "SVG" (KH0-0) 20×11
+          SVGVisualElement "Circle" (KH1-0) 8×8
+          SVGVisualElement "Circle" (KH2-0) 8×8
+          SVGVisualElement "Circle" (KH3-0) 8×8
+        Text "Pay all · AED 1,012.…" (KH4-0) 163×20 "Pay all · AED 1,012.60"
+    Frame "Rail" (A0I-0) 402×256
+      Frame "Brief card · Bill" (A19-0) 272×252
+        Frame "Poster" (A1J-0) 272×120
+          Frame "Poster top" (A1N-0) 240×32
+            Frame "Entity" (A1R-0) 80×32
+              Frame "Glyph" (A1T-0) 32×32
+                SVG "SVG" (A1U-0) 18×18
+                  SVGVisualElement "Path" (A1V-0) 9×14
+              Text "Entity name" (A1S-0) 40×18 "DEWA"
+            Frame "Due chip" (A1O-0) 122×26
+              Frame "Dot" (A1Q-0) 7×7
+              Text "Due tomorrow" (A1P-0) 90×18 "Due tomorrow"
+          Frame "Amount" (A1K-0) 240×40
+            Text "Currency" (A1M-0) 33×22 "AED"
+            Text "Value" (A1L-0) 109×40 "412.60"
+        Frame "Body" (A1A-0) 272×132
+          Frame "Text" (A1G-0) 240×46
+            Text "Title" (A1I-0) 240×24 "Electricity & water bill"
+            Text "Meta" (A1H-0) 240×20 "Al Barsha 1 · Account 2004 1187"
+          Frame "Actions" (A1B-0) 240×44
+            Frame "Button · Primary" (A1E-0) 144×44
+              Text "Pay now" (A1F-0) 68×24 "Pay now"
+            Frame "Button · Later" (A1C-0) 88×44
+              Text "Later" (A1D-0) 41×24 "Later"
+      Frame "Brief card · Request in progress" (A0J-0) 272×252
+        Frame "Poster" (A0T-0) 272×120
+          Frame "Poster top" (A10-0) 240×32
+            Frame "Entity" (A13-0) 106×32
+              Frame "Glyph" (A15-0) 32×32
+                SVG "SVG" (A16-0) 18×18
+                  SVGVisualElement "Path" (A18-0) 10×14
+                  SVGVisualElement "Path" (A17-0) 8×11
+              Text "Entity name" (A14-0) 66×18 "Residency"
+            Frame "Due chip" (A11-0) 86×26
+              Text "3 days left" (A12-0) 66×18 "3 days left"
+          Frame "Steps" (A0W-0) 240×40
+            Frame "Step label" (A0X-0) 240×40
+              Text "3" (A0Z-0) 21×40 "3"
+              Text "of 5 steps" (A0Y-0) 74×22 "of 5 steps"
+          Frame "Continue bar" (A0U-0) 272×5
+            Frame "Watched" (A0V-0) 109×5
+        Frame "Body" (A0K-0) 272×132
+          Frame "Text" (A0Q-0) 240×46
+            Text "Title" (A0S-0) 240×24 "Upload passport copy"
+            Text "Meta" (A0R-0) 240×20 "Residence renewal · GDRFA"
+          Frame "Actions" (A0L-0) 240×44
+            Frame "Button · Primary" (A0M-0) 240×44
+              SVG "SVG" (A0O-0) 16×16
+                SVGVisualElement "Path" (A0P-0) 8×10
+              Text "Continue" (A0N-0) 73×24 "Continue"
+  Frame "Anchor 2 · Favorites" (HHA-0) 402×194
+    Frame "Section header" (HHB-0) 362×44
+      Text "Heading" (HHC-0) 95×28 "Favorites"
+      Text "Edit" (HHD-0) 31×24 "Edit"
+    Frame "Favorites row (4-column grid, 12 gutter)" (HHE-0) 362×106
+      Frame "Favorite · Pay parking" (HHF-0) 82×106
+        Frame "Tile" (HHG-0) 82×82
+          SVG "SVG" (HHH-0) 34×34
+            SVGVisualElement "Path" (HHI-0) 26×26
+        Text "Label" (HHJ-0) 82×16 "Pay parking"
+      Frame "Favorite · Salik" (HHK-0) 82×106
+        Frame "Tile" (HHL-0) 82×82
+          SVG "SVG" (HHM-0) 34×34
+            SVGVisualElement "Rect" (HHN-0) 26×5
+            SVGVisualElement "Rect" (HHO-0) 4×23
+            SVGVisualElement "Rect" (HHP-0) 4×23
+            SVGVisualElement "Rect" (HHQ-0) 9×6
+            SVGVisualElement "Rect" (HHR-0) 2×3
+            SVGVisualElement "Rect" (HHS-0) 2×3
+        Text "Label" (HHT-0) 82×16 "Salik"
+      Frame "Favorite · Vehicles" (HHU-0) 82×106
+        Frame "Tile" (HHV-0) 82×82
+          SVG "SVG" (HHW-0) 34×34
+            SVGVisualElement "Path" (HHX-0) 28×23
+        Text "Label" (HHY-0) 82×16 "Vehicles"
+      Frame "Favorite · Donate" (HHZ-0) 82×106
+        Frame "Tile" (HI0-0) 82×82
+          SVG "SVG" (HI1-0) 34×34
+            SVGVisualElement "Path" (HI2-0) 26×23
+        Text "Label" (HI3-0) 82×16 "Donate"
+  Frame "Canvas · Your widgets" (9VF-0) 402×824
+    Frame "Section header" (HI5-0) 362×44
+      Text "Heading" (HI6-0) 133×28 "Your widgets"
+      Text "Edit" (HI7-0) 31×24 "Edit"
+    Frame "Row 1" (9YC-0) 362×175
+      Frame "Widget · Parking · Small" (9Z7-0) 175×175
+        Frame "Top" (9ZE-0) 147×44
+          Frame "Parking sign" (9ZJ-0) 34×34
+            Text "P" (9ZK-0) 15×24 "P"
+          Frame "Quick action · Extend (44pt)" (9ZF-0) 44×44
+            Frame "Circle" (9ZG-0) 34×34
+              SVG "SVG" (9ZH-0) 16×16
+                SVGVisualElement "Path" (9ZI-0) 9×9
+        Frame "Value" (9ZB-0) 147×52
+          Text "42" (9ZD-0) 54×46 "42"
+          Text "min" (9ZC-0) 28×22 "min"
+        Text "Caption" (9ZA-0) 147×30 "left in Zone 365C"
+        Frame "Draining bar" (9Z8-0) 143×6
+          Frame "Remaining" (9Z9-0) 50×6
+      Frame "Widget · Salik · Small" (9YD-0) 175×175
+        SVG "Lane marks (decorative)" (9Z4-0) 175×175
+          SVGVisualElement "Path" (9Z6-0) 32×83
+          SVGVisualElement "Path" (9Z5-0) ?×35
+        Frame "Top" (9YV-0) 147×44
+          Frame "Gantry" (9Z0-0) 34×34
+            SVG "SVG" (9Z1-0) 20×20
+              SVGVisualElement "Path" (9Z3-0) 14×12
+              SVGVisualElement "Rect" (9Z2-0) 6×3
+          Frame "Quick action · Top up (44pt)" (9YW-0) 44×44
+            Frame "Circle" (9YX-0) 34×34
+              SVG "SVG" (9YY-0) 16×16
+                SVGVisualElement "Path" (9YZ-0) 9×9
+        Frame "Value" (9YS-0) 147×52
+          Text "AED" (9YU-0) 33×22 "AED"
+          Text "18" (9YT-0) 49×46 "18"
+        Frame "Caption" (9YP-0) 147×30
+          Frame "Dot" (9YR-0) 7×7
+          Text "Low · about 4 trips" (9YQ-0) 117×18 "Low · about 4 trips"
+        Frame "Trip pips" (9YE-0) 143×6
+          Rectangle "Rectangle" (9YO-0) 12×6
+          Rectangle "Rectangle" (9YN-0) 12×6
+          Rectangle "Rectangle" (9YM-0) 12×6
+          Rectangle "Rectangle" (9YL-0) 12×6
+          Rectangle "Rectangle" (9YK-0) 12×6
+          Rectangle "Rectangle" (9YJ-0) 12×6
+          Rectangle "Rectangle" (9YI-0) 12×6
+          Rectangle "Rectangle" (9YH-0) 12×6
+          Rectangle "Rectangle" (9YG-0) 12×6
+          Rectangle "Rectangle" (9YF-0) 12×6
+    Frame "Row 2" (9XF-0) 362×175
+      Frame "Widget · Prayer & sun · Small" (9XU-0) 175×175
+        Frame "Top" (9Y4-0) 143×66
+          Frame "Header" (9Y6-0) 143×20
+            Frame "Frame" (9Y8-0) 67×20
+              SVG "SVG" (9YA-0) 16×16
+                SVGVisualElement "Path" (9YB-0) 10×11
+              Text "Dhuhr" (9Y9-0) 45×20 "Dhuhr"
+            Text "in 2h 31m" (9Y7-0) 59×18 "in 2h 31m"
+          Text "Time" (9Y5-0) 143×44 "12:12"
+        SVG "Arc of the day" (9XV-0) 143×52
+          SVGVisualElement "Path" (9Y3-0) 143×?
+          SVGVisualElement "Path" (9Y2-0) 132×40
+          SVGVisualElement "Path" (9Y1-0) 26×32
+          SVGVisualElement "Circle" (9Y0-0) 7×7
+          SVGVisualElement "Circle" (9XZ-0) 5×5
+          SVGVisualElement "Circle" (9XY-0) 5×5
+          SVGVisualElement "Circle" (9XX-0) 22×22
+          SVGVisualElement "Circle" (9XW-0) 13×13
+      Frame "Widget · Weather & beach · Small" (9XG-0) 175×175
+        Frame "Top" (9XM-0) 143×88
+          Frame "Header" (9XP-0) 143×20
+            SVG "SVG" (9XR-0) 16×16
+              SVGVisualElement "Circle" (9XT-0) 6×6
+              SVGVisualElement "Path" (9XS-0) 13×13
+            Text "Kite Beach" (9XQ-0) 78×20 "Kite Beach"
+          Text "Temperature" (9XO-0) 143×46 "37°"
+          Text "Caption" (9XN-0) 143×18 "Feels 42° · UV 9"
+        Frame "Beach flag" (9XH-0) 123×28
+          SVG "SVG" (9XJ-0) 16×16
+            SVGVisualElement "Path" (9XL-0) ?×12
+            SVGVisualElement "Path" (9XK-0) 8×6
+          Text "Safe to swim" (9XI-0) 81×18 "Safe to swim"
+    Frame "Row 3" (9WF-0) 362×175
+      Frame "Widget · Metro · Medium" (9WG-0) 362×175
+        Frame "Board header" (9X2-0) 326×32
+          Frame "Station" (9X6-0) 197×20
+            SVG "SVG" (9XA-0) 20×20
+              SVGVisualElement "Rect" (9XE-0) 10×12
+              SVGVisualElement "Path" (9XD-0) 10×8
+              SVGVisualElement "Circle" (9XC-0) 2×2
+              SVGVisualElement "Circle" (9XB-0) 2×2
+            Text "Business Bay" (9X9-0) 97×20 "Business Bay"
+            Frame "Line pill" (9X7-0) 64×20
+              Text "Red Line" (9X8-0) 50×16 "Red Line"
+          Frame "Live" (9X3-0) 39×18
+            Rectangle "Rectangle" (9X5-0) 7×7
+            Text "Live" (9X4-0) 26×18 "Live"
+        Frame "Departure · Centrepoint" (9WS-0) 326×56
+          Frame "Destination" (9WY-0) 125×24
+            SVG "SVG" (9X0-0) 18×18
+              SVGVisualElement "Path" (9X1-0) 11×9
+            Text "Centrepoint" (9WZ-0) 97×24 "Centrepoint"
+          Frame "Times" (9WT-0) 114×32
+            Frame "Frame" (9WV-0) 46×32
+              Text "3" (9WX-0) 18×32 "3"
+              Text "min" (9WW-0) 25×20 "min"
+            Text "9 min" (9WU-0) 56×20 "9 min"
+        Frame "Rule" (9WR-0) 326×1
+        Frame "Departure · Expo 2020" (9WH-0) 326×56
+          Frame "Destination" (9WN-0) 117×24
+            SVG "SVG" (9WP-0) 18×18
+              SVGVisualElement "Path" (9WQ-0) 11×9
+            Text "Expo 2020" (9WO-0) 89×24 "Expo 2020"
+          Frame "Times" (9WI-0) 115×32
+            Frame "Frame" (9WK-0) 47×32
+              Text "6" (9WM-0) 19×32 "6"
+              Text "min" (9WL-0) 25×20 "min"
+            Text "14 min" (9WJ-0) 56×20 "14 min"
+    Frame "Row 4" (9VG-0) 362×175
+      Frame "Widget · Energy meter · Medium" (9VH-0) 362×175
+        Frame "Header" (9W5-0) 326×28
+          Frame "Frame" (9WA-0) 179×28
+            Frame "Frame" (9WC-0) 28×28
+              SVG "SVG" (9WD-0) 16×16
+                SVGVisualElement "Path" (9WE-0) 8×13
+            Text "Energy · September" (9WB-0) 143×20 "Energy · September"
+          Frame "Trend chip" (9W6-0) 110×26
+            SVG "SVG" (9W8-0) 14×14
+              SVGVisualElement "Path" (9W9-0) 7×8
+            Text "12% vs Aug" (9W7-0) 74×18 "12% vs Aug"
+        Frame "Body" (9VI-0) 326×86
+          Frame "Reading" (9VQ-0) 210×86
+            Frame "Meter digits" (9VS-0) 210×42
+              Frame "Frame" (9W3-0) 30×42
+                Text "0" (9W4-0) 18×30 "0"
+              Frame "Frame" (9W1-0) 30×42
+                Text "1" (9W2-0) 13×30 "1"
+              Frame "Frame" (9VZ-0) 30×42
+                Text "2" (9W0-0) 16×30 "2"
+              Frame "Frame" (9VX-0) 30×42
+                Text "8" (9VY-0) 17×30 "8"
+              Frame "Frame" (9VV-0) 30×42
+                Text "4" (9VW-0) 17×30 "4"
+              Frame "Frame" (9VT-0) 35×20
+                Text "kWh" (9VU-0) 31×20 "kWh"
+            Text "Caption" (9VR-0) 210×36 "Lower than 68% of similar homes in Al Barsha"
+          Frame "Six months" (9VJ-0) 96×64
+            Rectangle "Rectangle" (9VP-0) 11×34
+            Rectangle "Rectangle" (9VO-0) 11×44
+            Rectangle "Rectangle" (9VN-0) 11×57
+            Rectangle "Rectangle" (9VM-0) 11×64
+            Rectangle "Rectangle" (9VL-0) 11×51
+            Rectangle "Rectangle" (9VK-0) 11×45
+  Frame "Canvas end · Add widget" (9V5-0) 402×300
+    Frame "Empty slot · Add widget" (9VA-0) 362×96
+      Frame "Plus" (9VC-0) 44×44
+        SVG "SVG" (9VD-0) 18×18
+          SVGVisualElement "Path" (9VE-0) 11×11
+      Text "Add widget" (9VB-0) 92×24 "Add widget"
+    Frame "Pull hint" (9V6-0) 221×42
+      SVG "SVG" (9V8-0) 22×22
+        SVGVisualElement "Path" (9V9-0) 11×6
+      Text "Pull past the end to…" (9V7-0) 221×18 "Pull past the end to browse widgets"
+  Frame "Soft scroll edge · Bottom" (9V4-0) 402×137
+  Frame "Tab bar · Liquid Glass" (9UG-0) 288×64
+    Frame "Frost" (9V3-0) 288×64
+    Frame "Bezel lens" (9V2-0) 288×64
+    Frame "Sheen" (9V1-0) 288×64
+    Frame "Rim light" (9V0-0) 288×64
+    Frame "Tabs" (9UH-0) 280×56
+      Frame "Tab · Home · Selected" (9UV-0) 93×56
+        SVG "SVG" (9UX-0) 24×24
+          SVGVisualElement "Path" (9UZ-0) 18×19
+          SVGVisualElement "Path" (9UY-0) 4×7
+        Text "Home" (9UW-0) 35×16 "Home"
+      Frame "Tab · Services" (9UO-0) 93×56
+        SVG "SVG" (9UQ-0) 24×24
+          SVGVisualElement "Rect" (9UU-0) 8×8
+          SVGVisualElement "Rect" (9UT-0) 8×8
+          SVGVisualElement "Rect" (9US-0) 8×8
+          SVGVisualElement "Rect" (9UR-0) 8×8
+        Text "Services" (9UP-0) 50×16 "Services"
+      Frame "Tab · Activity" (9UI-0) 93×56
+        SVG "SVG" (9UK-0) 24×24
+          SVGVisualElement "Path" (9UN-0) 18×18
+          SVGVisualElement "Path" (9UM-0) 5×5
+          SVGVisualElement "Path" (9UL-0) 4×7
+        Text "Activity" (9UJ-0) 44×16 "Activity"
+  Frame "Search · Liquid Glass" (9U7-0) 64×64
+    Frame "Frost" (9UF-0) 64×64
+    Frame "Bezel lens" (9UE-0) 64×64
+    Frame "Sheen" (9UD-0) 64×64
+    Frame "Rim light" (9UC-0) 64×64
+    Frame "Icon" (9U8-0) 64×64
+      SVG "SVG" (9U9-0) 26×26
+        SVGVisualElement "Circle" (9UB-0) 14×14
+        SVGVisualElement "Path" (9UA-0) 6×6
+  Frame "Home indicator" (9U6-0) 134×5

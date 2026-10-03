@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Liquid Glass Lab</title>
+<style>
+  :root { color-scheme: light; }
+  html,body { margin:0; overflow:hidden; background:#fff; font-family: "SF Pro Text", "SF Pro", Inter, system-ui, sans-serif; }
+  .stage { position:relative; width:1280px; height:800px; overflow:hidden; }
+  .photo { position:absolute; left:0; top:0; width:640px; height:800px; background:url(backdrop.jpg) 30% 50%/auto 100%; }
+  .ui { position:absolute; left:640px; top:0; width:640px; height:800px; background:#F7F7F8; padding:56px 48px; box-sizing:border-box; color:#202023; }
+  .ui h1 { font: 700 44px/50px Inter, system-ui; letter-spacing:-0.02em; margin:0 0 18px; }
+  .ui p { font: 400 21px/31px Inter, system-ui; margin:0 0 16px; color:#47474D; }
+  .ui p b { color:#365BEB; font-weight:500; }
+  .chips { display:flex; gap:12px; margin:22px 0; }
+  .chip { width:120px; height:120px; border-radius:24px; display:flex; flex-direction:column; justify-content:flex-end; padding:14px; box-sizing:border-box; font:600 15px/18px Inter; }
+  .rows div { height:14px; border-radius:7px; background:#202023; margin:14px 0; opacity:.85 }
+  .cap { position:absolute; font: 500 12px/16px "JetBrains Mono", ui-monospace, monospace; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:rgba(0,0,0,.55); padding:6px 10px; border-radius:6px; }
+  /* ---------- A. Paper-native glass: only properties Paper keeps (v2) ---------- */
+  .glass { position:absolute; touch-action:none; cursor:grab; }
+  .glass > .layer { position:absolute; left:0; top:0; width:100%; height:100%; border-radius:inherit; pointer-events:none; }
+  .native { box-shadow: 0 10px 28px rgba(0,0,0,.14), 0 1px 3px rgba(0,0,0,.10), 0 0 0 .5px rgba(0,0,0,.06); }
+  .native .frost { background: rgba(255,255,255,.08); backdrop-filter: blur(3px) saturate(190%) brightness(106%); }
+  .native .bezel { backdrop-filter: blur(9px) saturate(170%) brightness(118%) contrast(108%);
+     mask-image: linear-gradient(to bottom,#000 0%,rgba(0,0,0,.35) 12%,transparent 26%,transparent 74%,rgba(0,0,0,.35) 88%,#000 100%), linear-gradient(to right,#000 0%,rgba(0,0,0,.35) 5%,transparent 11%,transparent 89%,rgba(0,0,0,.35) 95%,#000 100%); }
+  .native .sheen { background: linear-gradient(135deg, rgba(255,255,255,.20) 0%, rgba(255,255,255,0) 32%, rgba(255,255,255,0) 68%, rgba(255,255,255,.08) 100%); }
+  .native .rim { box-shadow: inset 1.5px 1.5px 1px -.5px rgba(255,255,255,.85), inset -1.5px -1.5px 1px -.5px rgba(255,255,255,.5), inset 0 0 0 .5px rgba(255,255,255,.38), inset 0 0 12px rgba(255,255,255,.10); }
+  .glass.shader { box-shadow: 0 10px 28px rgba(0,0,0,.14), 0 1px 3px rgba(0,0,0,.10); }
+  /* ---------- B. True shader: SVG filter as backdrop-filter (Chromium) ---------- */
+  .shader .frost { /* backdrop-filter set per element in JS: url(#lg-N) */ }
+  .shader .rim { box-shadow: inset 0 0 0 .5px rgba(255,255,255,.32); }
+  .icon { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); pointer-events:none; }
+</style></head>
+<body>
+<div id="vp" style="position:fixed;left:0;top:0;width:1280px;height:800px;overflow:hidden"><div class="stage" id="stage">
+  <div class="photo"></div>
+  <div class="ui">
+    <h1>Good morning, Sara.</h1>
+    <p>Your <b>bill is due tomorrow</b>. A <b>document needs you in 3 days</b>, with 4 more actions waiting.</p>
+    <div class="chips">
+      <div class="chip" style="background:#E1EFFF">Pay parking</div>
+      <div class="chip" style="background:#E2F3EC">Vehicles</div>
+      <div class="chip" style="background:#FCE7DA">Donate</div>
+      <div class="chip" style="background:#ECE6FB">Visas</div>
+    </div>
+    <p>Electricity &amp; water bill · DEWA · AED 412.50 due 2 Oct. Salik balance AED 96.00. Parking ends 18:40 in zone 365C.</p>
+    <div class="rows"><div style="width:92%"></div><div style="width:76%"></div><div style="width:84%"></div></div>
+  </div>
+  <div class="cap" style="left:24px; top:24px">A · Paper-native glass (live, CSS Paper keeps)</div>
+  <div class="cap" style="left:24px; top:430px">B · Shader glass (backdrop-filter: url(#liquid-glass))</div>
+</div>
+</div><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="defs"></defs></svg>
+<script>
+const stage = document.getElementById('stage'), defs = document.getElementById('defs');
+let n = 0;
+function filterFor(W, H, R, o = {}) {
+  const id = 'lg-' + (n++);
+  const md = Math.min(W, H), cl = (v, a, b) => Math.max(a, Math.min(b, v));
+  const sb = o.bezel ?? cl(0.11 * md, 4, 12), d = Math.max(1, sb / 4), K = 3.2;
+  const sc = (o.refraction ?? cl(0.38 * md, 16, 52)), disp = o.dispersion ?? 0.05;
+  const frost = o.frost ?? 2.2, sat = o.sat ?? 1.6, t = o.tint ?? 0.1, ss = cl(0.02 * md, 1.2, 2.4);
+  const shape = `data:image/svg+xml;charset=utf-8,` + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='${W}' height='${H}'><rect width='${W}' height='${H}' rx='${R}'/></svg>`);
+  defs.insertAdjacentHTML('beforeend', `
+  <filter id="${id}" x="0" y="0" width="${W}" height="${H}" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feImage href="${shape}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="none" result="shape"/>
+    <feGaussianBlur in="shape" stdDeviation="${sb}" result="hb"/>
+    <feColorMatrix in="hb" type="matrix" values="0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1" result="hR"/>
+    <feColorMatrix in="hb" type="matrix" values="0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1" result="hG"/>
+    <feOffset in="hR" dx="${-d}" result="xa"/><feOffset in="hG" dx="${d}" result="xb"/>
+    <feComposite in="xa" in2="xb" operator="arithmetic" k2="1" k3="1" result="xab"/>
+    <feColorMatrix in="xab" type="matrix" values="${K} ${-K} 0 0 0.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1" result="gx"/>
+    <feOffset in="hR" dy="${-d}" result="ya"/><feOffset in="hG" dy="${d}" result="yb"/>
+    <feComposite in="ya" in2="yb" operator="arithmetic" k2="1" k3="1" result="yab"/>
+    <feColorMatrix in="yab" type="matrix" values="0 0 0 0 0 ${K} ${-K} 0 0 0.5 0 0 0 0 0 0 0 0 0 1" result="gy"/>
+    <feComposite in="gx" in2="gy" operator="arithmetic" k2="1" k3="1" result="dmap"/>
+    <feDisplacementMap in="SourceGraphic" in2="dmap" scale="${sc*(1-disp)}" xChannelSelector="R" yChannelSelector="G" result="dR"/>
+    <feDisplacementMap in="SourceGraphic" in2="dmap" scale="${sc}" xChannelSelector="R" yChannelSelector="G" result="dG"/>
+    <feDisplacementMap in="SourceGraphic" in2="dmap" scale="${sc*(1+1.4*disp)}" xChannelSelector="R" yChannelSelector="G" result="dB"/>
+    <feColorMatrix in="dR" type="matrix" values="1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" result="cR"/>
+    <feColorMatrix in="dG" type="matrix" values="0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0" result="cG"/>
+    <feColorMatrix in="dB" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0" result="cB"/>
+    <feComposite in="cR" in2="cG" operator="arithmetic" k2="1" k3="1" result="cRG"/>
+    <feComposite in="cRG" in2="cB" operator="arithmetic" k2="1" k3="1" result="refr"/>
+    <feGaussianBlur in="refr" stdDeviation="${frost}" edgeMode="duplicate" result="frost"/>
+    <feColorMatrix in="frost" type="saturate" values="${sat}" result="vib"/>
+    <feComponentTransfer in="vib" result="tint"><feFuncR type="linear" slope="${1-t}" intercept="${t}"/><feFuncG type="linear" slope="${1-t}" intercept="${t}"/><feFuncB type="linear" slope="${1-t}" intercept="${t}"/></feComponentTransfer>
+    <feGaussianBlur in="shape" stdDeviation="${ss}" result="hs"/>
+    <feComponentTransfer in="hs" result="rim"><feFuncR type="linear" slope="0" intercept="1"/><feFuncG type="linear" slope="0" intercept="1"/><feFuncB type="linear" slope="0" intercept="1"/><feFuncA type="table" tableValues="0 0 0 0 0 0.45 0.3 0.16 0.07 0.02 0"/></feComponentTransfer>
+    <feColorMatrix in="hs" type="matrix" values="0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1" result="sR"/>
+    <feColorMatrix in="hs" type="matrix" values="0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1" result="sG"/>
+    <feOffset in="sR" dx="-1" dy="-1" result="sa"/><feOffset in="sG" dx="1" dy="1" result="sb2"/>
+    <feComposite in="sa" in2="sb2" operator="arithmetic" k2="1" k3="1" result="sab"/>
+    <feColorMatrix in="sab" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 2.6 -2.6 0 0 0" result="hiTL"/>
+    <feColorMatrix in="sab" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 -1.5 1.5 0 0 0" result="hiBR"/>
+    <feComposite in="hiTL" in2="hiBR" operator="arithmetic" k2="1" k3="1" result="hiDir"/>
+    <feComposite in="hiDir" in2="rim" operator="arithmetic" k2="1" k3="1" result="hi"/>
+    <feComposite in="hi" in2="tint" operator="over"/>
+  </filter>`);
+  return id;
+}
+const ICON = {
+  search: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>',
+  tabs: '<div style="display:flex;gap:44px;align-items:center"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="#fff"/></svg><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="2"/><rect x="13" y="13" width="7.5" height="7.5" rx="2"/></svg><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></div>'
+};
+function glass(kind, x, y, w, h, r, icon, opts) {
+  const el = document.createElement('div');
+  el.className = 'glass ' + kind;
+  Object.assign(el.style, { left: x + 'px', top: y + 'px', width: w + 'px', height: h + 'px', borderRadius: r + 'px' });
+  if (kind === 'native') el.innerHTML = '<div class="layer frost"></div><div class="layer bezel"></div><div class="layer sheen"></div><div class="layer rim"></div>';
+  else {
+    const id = filterFor(w, h, r, opts);
+    el.innerHTML = `<div class="layer frost" style="backdrop-filter:url(#${id})"></div><div class="layer rim"></div>`;
+  }
+  if (icon) el.insertAdjacentHTML('beforeend', `<div class="icon">${ICON[icon]}</div>`);
+  stage.appendChild(el);
+  let sx, sy, ox, oy;
+  el.addEventListener('pointerdown', e => { el.setPointerCapture(e.pointerId); sx = e.clientX; sy = e.clientY; ox = el.offsetLeft; oy = el.offsetTop; el.style.cursor = 'grabbing'; });
+  el.addEventListener('pointermove', e => { if (sx === undefined) return; el.style.left = ox + e.clientX - sx + 'px'; el.style.top = oy + e.clientY - sy + 'px'; });
+  el.addEventListener('pointerup', () => { sx = undefined; el.style.cursor = 'grab'; });
+  return el;
+}
+// Row A — Paper-native
+glass('native', 470, 150, 340, 84, 42, 'tabs');
+glass('native', 846, 150, 84, 84, 42, 'search');
+glass('native', 150, 210, 220, 140, 40);
+// Row B — real shader on the live backdrop
+glass('shader', 470, 560, 340, 84, 42, 'tabs', { frost: 2.6, tint: 0.12 });
+glass('shader', 846, 560, 84, 84, 42, 'search', { frost: 2.6, tint: 0.12 });
+glass('shader', 150, 500, 220, 140, 40, null, { frost: 0.6, sat: 1.3, tint: 0.03 });
+
+// ?crop=x,y,w,h magnifies one region of the 1280x800 stage to fill the viewport (for inspection)
+(() => { const q = new URLSearchParams(location.search).get('crop'); if (!q) return;
+  const [x, y, w, h] = q.split(',').map(Number), z = Math.min(innerWidth / w, innerHeight / h);
+  const vp = document.getElementById('vp'); vp.style.width = innerWidth + 'px'; vp.style.height = innerHeight + 'px'; stage.style.transformOrigin = '0 0';
+  stage.style.transform = `scale(${z}) translate(${-x}px, ${-y}px)`; })();
+</script>
+</body></html>

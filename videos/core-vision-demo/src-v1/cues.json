@@ -1,0 +1,103 @@
+{
+  "duration": 44,
+  "chapters": [
+    {
+      "in": 4.24,
+      "out": 9.4,
+      "label": "01 · Home",
+      "head": "What needs you comes first.",
+      "sub": "Bills, fines and requests from every entity, at the top of Home. Pay all appears when two or more are due."
+    },
+    {
+      "in": 9.96,
+      "out": 14.5,
+      "label": "02 · Widgets",
+      "head": "Your city, live on Home.",
+      "sub": "Parking, Salik, prayer times and the metro. Widgets you choose, updating all day."
+    },
+    {
+      "in": 14.96,
+      "out": 20.5,
+      "label": "03 · Receipts",
+      "head": "Paid, then one tap to rate it.",
+      "sub": "Every receipt asks how it went. The answer goes to the entity and the Happiness Meter, and never blocks a task."
+    },
+    {
+      "in": 21.03,
+      "out": 26.9,
+      "label": "04 · Search",
+      "head": "Ask in your own words.",
+      "sub": "Search grows from the bottom, answers simple questions and knows local words."
+    },
+    {
+      "in": 27.46,
+      "out": 33.1,
+      "label": "05 · Activity",
+      "head": "Always know what’s next.",
+      "sub": "Every request, step by step. When it’s your turn, the action is right there."
+    },
+    {
+      "in": 33.53,
+      "out": 39.1,
+      "label": "06 · Your Home",
+      "head": "Home is yours to arrange.",
+      "sub": "Pull past the end to add widgets. Nothing appears or disappears on its own."
+    }
+  ],
+  "taps": {
+    "salik": 13.9,
+    "happy": 18.0,
+    "close": 19.8,
+    "search": 21.1,
+    "pay": 25.3,
+    "homeCircle": 26.5,
+    "rail": 27.6,
+    "cont": 28.6,
+    "scan": 31.7,
+    "back": 32.8,
+    "pull": 34.9,
+    "add": 36.5
+  },
+  "sfx": [
+    {
+      "file": "whoosh-short",
+      "t": 3.45,
+      "vol": 0.35
+    },
+    {
+      "file": "chime",
+      "t": 15.15,
+      "vol": 0.3
+    },
+    {
+      "file": "typing",
+      "t": 21.75,
+      "vol": 0.3
+    },
+    {
+      "file": "whoosh-short",
+      "t": 28.75,
+      "vol": 0.25
+    },
+    {
+      "file": "whoosh-short",
+      "t": 35.3,
+      "vol": 0.25
+    },
+    {
+      "file": "sparkle",
+      "t": 37.0,
+      "vol": 0.3
+    },
+    {
+      "file": "whoosh-short",
+      "t": 39.35,
+      "vol": 0.3
+    }
+  ],
+  "music": {
+    "src": "assets/bgm/morning-bed.mp3",
+    "volume": 0.75,
+    "source": "HeyGen catalogue bgm_001 (track 2e15b4d401c648b585a2fedb8deee350), cut from 3.15s so its lift lands on 04 · Search"
+  }
+}

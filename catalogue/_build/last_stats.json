@@ -1,0 +1,29 @@
+{
+ "stats": {
+  "legacyRecords": 351,
+  "decisions": {
+   "keep": 209,
+   "fold": 20,
+   "merge": 37,
+   "review": 7,
+   "retire": 57,
+   "restore": 8,
+   "move": 13
+  },
+  "newRecords": 6,
+  "services": 219,
+  "byType": {
+   "journey": 5,
+   "standalone": 210,
+   "bundle": 4
+  },
+  "things": 10,
+  "guides": 1,
+  "charityOptions": 20,
+  "appFeatures": 13,
+  "retired": 57,
+  "merged": 37,
+  "toConfirm": 34
+ },
+ "unmatched": []
+}
