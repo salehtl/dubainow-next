@@ -122,3 +122,8 @@ Checked on emulator-5558 (Sara, Wei, Faisal, Khalid). Fixed:
   bar's measured height (`bottomBand`). Behind your side (chips, caption, transcript, bar) the frost turns
   nearly solid (≈ 0.96 together with the frost below it, and 64 dp of fade above), standing in for iOS's
   material blur. Text behind measures ~3 % contrast (240 on 247). The rest of the screen keeps the light veil.
+
+## Header logo looks tappable (5 Nov, port of iOS 6.0 (3))
+- `AssistantLogoButton` (app/Chrome.kt): the same light sweep as iOS (drawn `SrcAtop` on an offscreen layer so it only
+  lights the mark; 1.2 s first, then every 6 s, 1.1 s sweep) and a 0.9 press scale (`DNMotion.snappy`). Signed-in only;
+  off when "Remove animations" is on. Not yet compiled: written on a Mac without the JDK / Android SDK.

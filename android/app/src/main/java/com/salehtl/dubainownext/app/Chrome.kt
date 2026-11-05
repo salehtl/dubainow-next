@@ -1,8 +1,14 @@
 package com.salehtl.dubainownext.app
 
+import android.provider.Settings
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -23,10 +29,20 @@ import androidx.compose.material.icons.rounded.PersonOutline
 import androidx.compose.material.icons.rounded.SentimentSatisfied
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawWithContent
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.BlendMode
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.CompositingStrategy
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
@@ -36,6 +52,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.salehtl.dubainownext.design.DNColor
 import com.salehtl.dubainownext.design.DNHaptics
+import com.salehtl.dubainownext.design.DNMotion
 import com.salehtl.dubainownext.design.Inter
 import com.salehtl.dubainownext.design.components.Avatar
 import com.salehtl.dubainownext.design.components.DNLogo
@@ -113,15 +130,55 @@ fun PushedHeader(modifier: Modifier = Modifier, onBack: (() -> Unit)? = null, ac
 @Composable
 fun AssistantLogoButton(modifier: Modifier = Modifier) {
     val store = LocalStore.current; val router = LocalRouter.current; val view = LocalView.current
+    val context = LocalContext.current
     val signedIn = store.session != null && !store.isGuest
+    // "Remove animations" (animator duration scale 0) = Reduce Motion.
+    val reduceMotion = remember {
+        runCatching { Settings.Global.getFloat(context.contentResolver, Settings.Global.ANIMATOR_DURATION_SCALE, 1f) == 0f }.getOrDefault(false)
+    }
+    val live = signedIn && !reduceMotion
+    val interaction = remember { MutableInteractionSource() }
+    val pressed by interaction.collectIsPressedAsState()
+    val scale by animateFloatAsState(if (pressed && live) 0.9f else 1f, DNMotion.snappy(), label = "logoPress")
+    // A soft band of light crosses the mark now and then, so the logo reads as something you can tap.
+    val sheen = remember { Animatable(0f) }
+    if (live) LaunchedEffect(Unit) {
+        kotlinx.coroutines.delay(1200)
+        while (true) {
+            sheen.snapTo(0f)
+            sheen.animateTo(1f, tween(1100, easing = FastOutSlowInEasing))
+            kotlinx.coroutines.delay(6000)
+        }
+    }
     Box(
         modifier.size(56.dp).clip(CircleShape)
             .combinedClickable(
-                interactionSource = remember { MutableInteractionSource() }, indication = null, role = Role.Button,
+                interactionSource = interaction, indication = null, role = Role.Button,
                 onLongClick = { if (signedIn) { DNHaptics.medium(view); router.dismissSheet(); router.openAssistant("__listen__") } },
                 onClick = { if (signedIn) { DNHaptics.medium(view); router.dismissSheet(); router.openAssistant() } },
             )
             .semantics { contentDescription = "DubaiNow assistant" },
         contentAlignment = Alignment.Center,
-    ) { DNLogo(height = 28.dp) }
+    ) {
+        DNLogo(
+            height = 28.dp,
+            modifier = Modifier
+                .graphicsLayer { scaleX = scale; scaleY = scale; compositingStrategy = CompositingStrategy.Offscreen }
+                .drawWithContent {
+                    drawContent()
+                    if (!live) return@drawWithContent
+                    // Sweeps from fully left of the mark to fully right of it, tilted ~18°; drawn
+                    // SrcAtop so it only lights the mark itself.
+                    val w = size.width; val band = w * 0.55f
+                    val x = -w * 0.6f + sheen.value * w * 1.6f
+                    drawRect(
+                        Brush.linearGradient(
+                            listOf(Color.White.copy(alpha = 0f), Color.White.copy(alpha = 0.65f), Color.White.copy(alpha = 0f)),
+                            start = Offset(x, 0f), end = Offset(x + band, band * 0.32f),
+                        ),
+                        blendMode = BlendMode.SrcAtop,
+                    )
+                },
+        )
+    }
 }

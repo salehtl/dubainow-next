@@ -107,17 +107,65 @@ struct AssistantLogoButton: View {
         }
     }
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var isPressed = false
+
+    private var isLive: Bool { store.session != nil && !store.isGuest }
+
     var body: some View {
         DNLogo(height: 28)
+            .overlay { if isLive && !reduceMotion { AssistantLogoSheen(height: 28) } }
+            .scaleEffect(isPressed && isLive && !reduceMotion ? 0.9 : 1)
+            .animation(DNMotion.snappy, value: isPressed)
             .padding(.horizontal, 10)
             .frame(minWidth: 44, minHeight: 44)
             .contentShape(.rect)
             .onTapGesture { open(seed: nil) }
-            .onLongPressGesture(minimumDuration: DNMotion.holdDelay) { open(seed: "__listen__") }
+            .onLongPressGesture(minimumDuration: DNMotion.holdDelay) {
+                open(seed: "__listen__")
+            } onPressingChanged: { isPressed = $0 }
             .accessibilityElement()
             .accessibilityLabel("DubaiNow assistant")
             .accessibilityHint("Ask DubaiNow to do something for you")
             .accessibilityAddTraits(.isButton)
+    }
+}
+
+/// A soft band of light that crosses the mark now and then, so the logo reads as something you
+/// can tap (it's the assistant). Clipped to the mark's shape; never runs under Reduce Motion.
+private struct AssistantLogoSheen: View {
+    var height: CGFloat
+    /// First sweep shortly after the header appears, then one every few seconds.
+    private let firstDelay: Duration = .milliseconds(1200)
+    private let interval: Duration = .seconds(6)
+    private let sweep: Double = 1.1
+
+    @State private var phase: CGFloat = 0
+
+    var body: some View {
+        GeometryReader { geo in
+            let w = geo.size.width
+            LinearGradient(
+                colors: [.white.opacity(0), .white.opacity(0.65), .white.opacity(0)],
+                startPoint: .leading, endPoint: .trailing
+            )
+            .frame(width: w * 0.55, height: geo.size.height * 1.6)
+            .rotationEffect(.degrees(18))
+            // From fully left of the mark to fully right of it.
+            .offset(x: -w * 0.6 + phase * w * 1.6, y: -geo.size.height * 0.3)
+        }
+        .mask(DNLogo(height: height))
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+        .task {
+            try? await Task.sleep(for: firstDelay)
+            while !Task.isCancelled {
+                withAnimation(.easeInOut(duration: sweep)) { phase = 1 }
+                try? await Task.sleep(for: .seconds(sweep))
+                phase = 0
+                try? await Task.sleep(for: interval)
+            }
+        }
     }
 }
 

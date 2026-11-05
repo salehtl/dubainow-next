@@ -72,3 +72,8 @@ Large text: card scrolls; amounts move under the step title.
   passport step waiting, it falls back to Coming soon ("Scanning with the camera comes with the service flows.").
 - **Remind me** at the visa fee step (no Needs you item of its own) says "…to pay the fees to renew your residence visa";
   bills read "…to pay your electricity & water bill".
+
+## 6.0 (3) (5 Nov): the header logo looks tappable
+- `AssistantLogoButton` (App/MainChrome.swift): a soft band of light (`AssistantLogoSheen`, clipped to the mark) crosses
+  the logo 1.2 s after the header appears, then every 6 s (1.1 s sweep); pressing scales it to 0.9 with `DNMotion.snappy`.
+  Signed-in residents only (guests can't open the assistant), and never under Reduce Motion.
